@@ -27,7 +27,7 @@ namespace Localizer.Data
                 {
                     if(CountSubstring(pair.Key, sc) != CountSubstring(pair.Value, sc))
                     {
-                        Console.WriteLine($"[SC NOT MATCH][{CountSubstring(pair.Key, sc)}][{CountSubstring(pair.Value, sc)}]");
+                        Console.WriteLine($"[SC NOT MATCH][{CountSubstring(pair.Key, sc)}][{CountSubstring(pair.Value, sc)}] \"{pair.Key}\" - \"{pair.Value}\"");
                         return false;
                     }
                 }

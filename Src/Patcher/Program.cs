@@ -35,8 +35,6 @@ namespace Patcher
                 {
 
                 }
-
-                Console.WriteLine(translationFilePath);
             }
         }
     }
