@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 
 namespace Localizer.Localizers
 {
-    public class JarGeneralLocalizer
+    public static class JarGeneralLocalizer
     {
-        public int Localize(string zipPath, IDictionary<string, string> dictionary)
+        public static int Localize(string zipPath, IDictionary<string, string> dictionary)
         {
             int localizedStrings = 0;
             Console.WriteLine($"Process: {zipPath}");

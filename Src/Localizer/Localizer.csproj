@@ -11,6 +11,10 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Translation\Translation.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="Data\JarDictionary.json">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

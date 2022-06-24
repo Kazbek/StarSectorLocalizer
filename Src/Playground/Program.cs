@@ -53,11 +53,10 @@ namespace Playground
             fontsChangeDetectorRc6.ExploreDiff();
             */
             
-            var dictionaty = JsonToDictionary.Parse("Data/JarDictionary.json");
+            var dictionaty = JsonToTranslationDictionary.Parse("Data/JarDictionary.json");
 
-            JarGeneralLocalizer jarGeneralLocalizer = new JarGeneralLocalizer();
-            jarGeneralLocalizer.Localize(@"C:\StarSectorPlayground\StarSector 0.95.1a-RC6 Game\original\Starsector\starsector-core\starfarer_obf.jar", dictionaty);
-            jarGeneralLocalizer.Localize(@"C:\StarSectorPlayground\StarSector 0.95.1a-RC6 Game\original\Starsector\starsector-core\starfarer.api.jar", dictionaty);
+            JarGeneralLocalizer.Localize(@"C:\StarSectorPlayground\StarSector 0.95.1a-RC6 Game\original\Starsector\starsector-core\starfarer_obf.jar", dictionaty);
+            JarGeneralLocalizer.Localize(@"C:\StarSectorPlayground\StarSector 0.95.1a-RC6 Game\original\Starsector\starsector-core\starfarer.api.jar", dictionaty);
             
 
         }
