@@ -36,12 +36,12 @@ namespace Playground
             foreach (var path in changedFilesTranslation)
                 Console.WriteLine(path);*/
 
-            /*var unchangedCopier = new PathFileTaker
-            {
-                SourceFolder = @"C:\StarSectorPlayground\Starsector v9.1\translation",
-                DestinationFolder = @"C:\StarSectorPlayground\Starsector 0.95.1a\translation-unchanged"
-            };
-            unchangedCopier.CopyFiles(unchangedFilesTranslation);*/
+            //var unchangedCopier = new PathFileTaker
+            //{
+            //    SourceFolder = @"C:\StarSectorPlayground\Starsector v9.1\translation",
+            //    DestinationFolder = @"C:\StarSectorPlayground\StarSector 0.95.1a-RC6\translation-unchanged"
+            //};
+            //unchangedCopier.CopyFiles(unchangedFilesTranslation);
 
             /*
             var fontsChangeDetectorRc6 = new FontsChangeDetector {
@@ -53,10 +53,10 @@ namespace Playground
             fontsChangeDetectorRc6.ExploreDiff();
             */
             
-            var dictionaty = JsonToTranslationDictionary.Parse("Data/JarDictionary.json");
-
-            JarGeneralLocalizer.Localize(@"C:\StarSectorPlayground\StarSector 0.95.1a-RC6 Game\original\Starsector\starsector-core\starfarer_obf.jar", dictionaty);
-            JarGeneralLocalizer.Localize(@"C:\StarSectorPlayground\StarSector 0.95.1a-RC6 Game\original\Starsector\starsector-core\starfarer.api.jar", dictionaty);
+            //var dictionaty = JsonToTranslationDictionary.Parse("Data/JarDictionary.json");
+            //
+            //JarGeneralLocalizer.Localize(@"C:\StarSectorPlayground\StarSector 0.95.1a-RC6 Game\original\Starsector\starsector-core\starfarer_obf.jar", dictionaty);
+            //JarGeneralLocalizer.Localize(@"C:\StarSectorPlayground\StarSector 0.95.1a-RC6 Game\original\Starsector\starsector-core\starfarer.api.jar", dictionaty);
             
 
         }
