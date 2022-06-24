@@ -16,8 +16,11 @@ namespace Patcher
             {
                 string targetFilePath = translationFilePath.Replace(translationPath, string.Empty);
                 if (translationFilePath.EndsWith(TranslationFilesNameConventions.TranslationPostfix))
-                    targetFilePath.Replace(TranslationFilesNameConventions.TranslationPostfix, string.Empty);
+                    targetFilePath = targetFilePath.Replace(TranslationFilesNameConventions.TranslationPostfix, string.Empty);
                 targetFilePath = Path.Combine(targetFolder, targetFilePath);
+
+                if (!File.Exists(targetFilePath))
+                    throw new FileNotFoundException($"File not found: {targetFilePath}");
 
                 if (translationFilePath.EndsWith(TranslationFilesNameConventions.JarTranslation.PostfixPattern))
                 {
