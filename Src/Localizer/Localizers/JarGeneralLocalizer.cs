@@ -48,6 +48,8 @@ namespace Localizer.Localizers
                                 modified++;
                             }
 
+
+                        localizedStrings += modified;
                         if(modified > 0)
                         {
                             stream.Position = 0;
