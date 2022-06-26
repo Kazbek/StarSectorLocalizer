@@ -6,6 +6,7 @@ namespace Patcher
 {
     internal class Program
     {
+        //Непонятного качества вышел шрифт Orbitron12 (3 файла). Посмотреть позже может есть получше шрифты.
         static void Main(string[] args)
         {
 
@@ -33,7 +34,8 @@ namespace Patcher
                 }
                 else
                 {
-
+                    File.Replace(translationFilePath, targetFilePath, null);
+                    Console.WriteLine($"[REPLACED] \"{targetFilePath}\"");
                 }
             }
         }

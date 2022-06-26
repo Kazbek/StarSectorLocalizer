@@ -12,4 +12,10 @@
     </Content>
   </ItemGroup>
 
+  <ItemGroup>
+    <None Remove="Languages\ru\starsector-core\graphics\fonts\orbitron12.fnt" />
+    <None Remove="Languages\ru\starsector-core\graphics\fonts\orbitron12condensed.fnt" />
+    <None Remove="Languages\ru\starsector-core\graphics\fonts\orbitron12_0.png" />
+  </ItemGroup>
+
 </Project>
