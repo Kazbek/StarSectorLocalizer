@@ -649,7 +649,7 @@
   "light-years": "световых лет",
   "light-year": "световой год",
   "The nearest cryosleeper is located in the ": "Ближайший корабль криосна расположен в ",
-  ", %s ": ", %s ",
+  ", %s ": null,
   " away. The maximum ": "Максимальная ",
   "range at which sleepers can be safely brought over for revival is %s light-years.": "дальность безопасной перевозки спящих людей для разморозки - %s световых лет.",
   " away, allowing ": " ,позволяя ",
