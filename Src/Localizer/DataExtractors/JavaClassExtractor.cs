@@ -20,7 +20,7 @@ namespace Localizer.DataExtractors
             _javaClass = new JavaClass(new KaitaiStream(data));
         }
 
-        public List<string> GetUtf8Entries()
+        public List<string> GetUtf8Entries(List<string> stopWords = null)
         {
             //var data = JavaClass.FromFile(@"C:\StarSectorPlayground\ooOO.class");
             //Or parse structure from a byte array:
@@ -40,6 +40,13 @@ namespace Localizer.DataExtractors
                         //Console.WriteLine(item.Tag + ": " + sub.Value);
                         entries.Add(sub.Value);
                     }
+                    if(sub.Value == "fleet")
+                    {
+                        var z = 1;
+                    }
+                }else if(item.CpInfo is JavaClass.StringCpInfo st)
+                {
+                    var z = 1;
                 }
                 //else
                 //{
@@ -47,9 +54,71 @@ namespace Localizer.DataExtractors
                 //}
             }
 
+            foreach(var m in _javaClass.Methods)
+            {
+                if (entries.Contains(m.NameAsStr))
+                {
+                    entries.Remove(m.NameAsStr);
+                }
+
+                foreach(var a in m.Attributes)
+                {
+                    if (entries.Contains(a.NameAsStr))
+                    {
+                        entries.Remove(a.NameAsStr);
+                    }
+                }
+            }
+
+
+            foreach (var m in _javaClass.Attributes)
+            {
+                if (entries.Contains(m.NameAsStr))
+                {
+                    entries.Remove(m.NameAsStr);
+                }
+            }
+
+            foreach (var m in _javaClass.Fields)
+            {
+                if (entries.Contains(m.NameAsStr))
+                {
+                    entries.Remove(m.NameAsStr);
+                }
+            }
+
+            if (stopWords != null)
+                entries = entries.Except(stopWords).ToList();
+
             return entries;
         }
 
+        public List<string> GetProgramUtf8Entries()
+        {
+            List<string> entries = new List<string>();
+            foreach (var m in _javaClass.Methods)
+            {
+                entries.Add(m.NameAsStr);
+
+                foreach (var a in m.Attributes)
+                {
+                    entries.Add(a.NameAsStr);
+                }
+            }
+
+
+            foreach (var m in _javaClass.Attributes)
+            {
+                entries.Add(m.NameAsStr);
+            }
+
+            foreach (var m in _javaClass.Fields)
+            {
+                entries.Add(m.NameAsStr);
+            }
+
+            return entries;
+        }
 
         private partial class JavaClass : KaitaiStruct
         {

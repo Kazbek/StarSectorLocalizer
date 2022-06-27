@@ -1,4 +1,5 @@
 ﻿using Localizer.DataExtractors;
+using Localizer.Decompilers;
 using System;
 using System.Collections.Generic;
 using System.IO.Compression;
@@ -15,16 +16,69 @@ namespace Localizer.Localizers
             int localizedStrings = 0;
             Console.WriteLine($"Process: {zipPath}");
 
+            string subFolderName = Path.GetFileName(zipPath);
+            foreach (var c in Path.GetInvalidPathChars())
+                subFolderName = subFolderName.Replace(c, '_');
+
+            string tempDecompiledPath = Path.Combine(Path.GetTempPath(),"Decompiled", subFolderName);
+            if(Directory.Exists(tempDecompiledPath))
+                ClearFolder(tempDecompiledPath);
+
+            Console.WriteLine(tempDecompiledPath);
+
+            CFRDecompilerWrapper.Decompile(zipPath, tempDecompiledPath);
+
             using (ZipArchive archive = ZipFile.Open(zipPath, ZipArchiveMode.Update))
             {
-                foreach (ZipArchiveEntry entry in archive.Entries.ToList())
+                Dictionary<string, List<string>> stopWords = new Dictionary<string, List<string>>();
+                foreach (ZipArchiveEntry entry in archive.Entries.Where(t => t.FullName.EndsWith(".class", StringComparison.OrdinalIgnoreCase)).ToList())
+                {
+                    if(entry.Name.StartsWith("CampaignGameManager"))
+                    {
+                        var z = 1;
+                    }
+
+                    string group = GetClassGroupName(entry.Name);
+                    if(!stopWords.ContainsKey(group))
+                        stopWords[group] = new List<string>();
+
+                    var stream = entry.Open();
+                    byte[] sourceData = ReadFully(stream);
+                    var javaClassExtractor = new JavaClassExtractor(sourceData);
+                    var utf8commandStrings = javaClassExtractor.GetProgramUtf8Entries();
+                    stream.Close();
+                    stopWords[group].AddRange(utf8commandStrings);
+                }
+
+                foreach (ZipArchiveEntry entry in archive.Entries.Where(t => t.FullName.EndsWith(".class", StringComparison.OrdinalIgnoreCase)).ToList())
                 {
                     if (entry.FullName.EndsWith(".class", StringComparison.OrdinalIgnoreCase))
                     {
                         var stream = entry.Open();
                         byte[] sourceData = ReadFully(stream);
                         var javaClassExtractor = new JavaClassExtractor(sourceData);
-                        var utf8Strings = javaClassExtractor.GetUtf8Entries();
+
+                        if (entry.Name.StartsWith("CampaignGameManager"))
+                        {
+                            var z = 1;
+                        }
+
+                        string className = entry.FullName;
+                        if (className.Contains('$'))
+                            className = className[0..className.IndexOf('$')] + ".class";
+
+                        var fileStopWords = JavaSourceCodeExtractor.GetStopWords(Path.Combine(tempDecompiledPath, className.Replace('/','\\')));
+                        if (stopWords.TryGetValue(GetClassGroupName(entry.Name), out var sws))
+                            fileStopWords.AddRange(sws);
+
+                        var utf8Strings = javaClassExtractor.GetUtf8Entries(fileStopWords);
+                        fileStopWords = JavaSourceCodeExtractor.GetStopWordsFromAdvices(Path.Combine(tempDecompiledPath, className.Replace('/', '\\')), utf8Strings);
+                        utf8Strings = utf8Strings.Except(fileStopWords).ToList();
+
+                        if (utf8Strings.Contains("fleet"))
+                        {
+                            var aa = 1;
+                        }
 
                         int modified = 0;
                         foreach(var text in utf8Strings)
@@ -56,13 +110,22 @@ namespace Localizer.Localizers
                             stream.SetLength(0);
                             stream.Write(sourceData, 0, sourceData.Length);
                             stream.Flush();
-                            stream.Close();
                         }
+                        stream.Close();
                     }
                 }
             }
 
+            //ClearFolder(tempDecompiledPath);
+
             return localizedStrings;
+        }
+
+        private static string GetClassGroupName(string name)
+        {
+            if(!name.Contains('$'))
+                return name;
+            return name[0..name.IndexOf('$')];
         }
 
         private static byte[] ReadFully(Stream input)
@@ -128,6 +191,20 @@ namespace Localizer.Localizers
                     src.Length - (index + search.Length));
             }
             return dst;
+        }
+
+        public static void ClearFolder(string path)
+        {
+            System.IO.DirectoryInfo di = new DirectoryInfo(path);
+
+            foreach (FileInfo file in di.GetFiles())
+            {
+                file.Delete();
+            }
+            foreach (DirectoryInfo dir in di.GetDirectories())
+            {
+                dir.Delete(true);
+            }
         }
     }
 }

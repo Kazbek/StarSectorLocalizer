@@ -127,7 +127,7 @@
   "Outposts": "Форпосты",
   "Map": "Карта",
   "Character": "Персонаж",
-  "Food for thought: the RNG may know that you're playing a pirated copy of the game. Let the paranoia begin!":  "Пища для размышлений: RNG может знать, что вы играете в пиратскую копию игры. Пусть начнется паранойя!",
+  "Food for thought: the RNG may know that you're playing a pirated copy of the game. Let the paranoia begin!": "Пища для размышлений: RNG может знать, что вы играете в пиратскую копию игры. Пусть начнется паранойя!",
   "If you're enjoying the game, please consider supporting its development: www.fractalsoftworks.com": "Если вам нравится игра, пожалуйста, подумайте о поддержке ее разработки: www.fractalsoftworks.com и переводчика Kazbek",
   "Gained ": "Получено ",
   " bonus experience": " бонусного опыта",
@@ -199,7 +199,7 @@
   " suffered an unknown problem": " пострадал от неизвестной проблемы",
   ", resulting in": ", в результате чего",
   "Fuel capacity exceeded": "Превышен запас топлива",
-  "Dispose of excess fuel, or acquire more ships to increase you fleet's fuel capacity":  "Избавьтесь от излишков топлива или приобретайте больше кораблей, чтобы увеличить запас топлива вашего флота",
+  "Dispose of excess fuel, or acquire more ships to increase you fleet's fuel capacity": "Избавьтесь от излишков топлива или приобретайте больше кораблей, чтобы увеличить запас топлива вашего флота",
   "Dismiss": "Отклонить",
   "Accident Report": "Отчет об Аварии",
   "Severity:": "Уровень:",
@@ -1335,7 +1335,7 @@
   "Maneuverability": "Маневренность",
   "CR per fighter deployed": "БГ за каждый развернутый истребитель",
   "CR per deployment": "Боевая Готовность за развертывание",
-  "  Recovery rate (per day)":  "  Скорость ремонта (в день)",
+  "  Recovery rate (per day)": "  Скорость ремонта (в день)",
   "  Recovery cost (supplies)": "  Стоимость ремона (припасы)",
   "  Deployment points": "  Очки развёртывания",
   "Peak performance (sec)": "Максимальная эф-ть (сек)",
@@ -3049,5 +3049,9 @@
   "Ship Hulls & Weapons": null,
   "Saving screenshot to %s...": null,
   "type: ": null,
-  ",value:": null
+  ",value:": null,
+
+  "fleet": "флот",
+  "FLEET": "ФЛОТ",
+  "Fleet": "Флот"
 }

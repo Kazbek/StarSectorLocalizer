@@ -88,7 +88,7 @@
   " lose excess skills": " потеряет навыки",
   " lose excess skills and elite skill effects": " потеряет навыки и элитные ранги к ним",
   "Excess ordnance points": "Очки оснащения сверх лимита",
-  "Ships using more than their maximum ordnance points will have vents, capacitors, hullmods, and other equipment removed to bring them under the limit.": "С кораблей, превышающих лимит очков оснащения, будет снята часть оснащения до достижения лимита." ,
+  "Ships using more than their maximum ordnance points will have vents, capacitors, hullmods, and other equipment removed to bring them under the limit.": "С кораблей, превышающих лимит очков оснащения, будет снята часть оснащения до достижения лимита.",
   "vents, capacitors, hullmods, and other equipment removed": "рассеивателей, конденсаторов, модификаций корпуса и прочего оборудования будет снято",
   "S-mods": "Встроенные модификации корпуса",
   "Ships that you've built s-mods into that now have more than their maximum number of s-mods will have the cheapest s-mods removed.": "Из кораблей, в которые вы встроили модификации, будут убраны лишние модификации в порядке от самой дешёвой к самой дорогой",
@@ -288,7 +288,7 @@
   "Pick through the wreckage": "Покопаться в обломках",
   "Your forces": "Ваши силы",
   "Allied forces": "Союзные силы",
-  "Cut the comm link": "Отключить связь",
+  "Cut the comm link": "Закрыть канал связи",
   "Additional XP due to overall battle difficulty: %s": "Бонус к опыту из-за сложности битвы: %s",
   "Order your second-in-command to handle it": "Пусть этим займётся заместитель",
   "Transfer command for this engagement": "Выбрать флагман на этот бой",
@@ -918,7 +918,7 @@
   "Failing to complete it within the required timeframe will result in a reputation penalty ": "Если вы не сможете её выполнить вовремя, то это повредит ваши отношения ",
   "with ": "с ",
   "It's been less than a day, and you can still abandon this ": "Прошло меньше суток, и ещё можно отказаться от этой ",
-  " without a penalty.": " без последствий." ,
+  " without a penalty.": " без последствий.",
   "You can abandon this ": "Вы можете отказаться от этой ",
   ", but will suffer ": ", но потерпите ",
   "a reputation penalty with ": "ухудшение отношений с ",
@@ -3806,5 +3806,8 @@
   "fairly strong": null,
   "strong": null,
   "very strong": null,
-  "Fearless": null
+  "Fearless": null,
+
+  "fleet": "флот",
+  "FLEET": "ФЛОТ"
 }
