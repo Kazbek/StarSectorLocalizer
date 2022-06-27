@@ -8,16 +8,71 @@ namespace Localizer.DataExtractors
 {
     public static class JavaSourceCodeExtractor
     {
+
         public static List<string> GetStopWords(string path)
+        {
+            try
+            {
+                return GetStopWordsAuto(path);
+            }
+            catch(Exception e)
+            {
+                return null;
+            }
+        }
+
+        public static List<string> GetStopWordsAuto(string path)
+        {
+            if (path.EndsWith(".class"))
+                path = path.Substring(0, path.Length - ".class".Length);
+
+            string testPath = path + ".java";
+            if (FileExistsCaseSensitive(testPath))
+                return GetStopWordsInternal(testPath);
+
+            string folder = Path.GetDirectoryName(testPath);
+            List<string> files = Directory.GetFiles(folder, "*", SearchOption.TopDirectoryOnly)
+                .Where(t =>
+                {
+                    string fileName = Path.GetFileName(t);
+                    if (fileName.Contains("_cfr_"))
+                    {
+                        string shorted = Path.Combine(folder, fileName.Substring(0, fileName.IndexOf("_cfr_")));
+                        return path.StartsWith(shorted);
+                    }
+
+                    if (fileName.Contains("_"))
+                    {
+                        string shorted = Path.Combine(folder, fileName.Substring(0, fileName.IndexOf("_")));
+                        return path.StartsWith(shorted);
+                    }
+                    return false;
+                }).ToList();
+
+            if(files.Count > 0)
+            {
+                List<string> unitedStopWords = new List<string>();
+                foreach (var f in files)
+                    unitedStopWords.AddRange(GetStopWordsInternal(f));
+
+                return unitedStopWords;
+            }
+
+            return null;
+
+        }
+
+
+        private static List<string> GetStopWordsInternal(string path)
         {
             List<string> stopWords = new List<string>();
 
-            if(path.EndsWith(".class"))
-                path = path.Substring(0, path.Length - ".class".Length) + ".java";
+            //if(path.EndsWith(".class"))
+            //    path = path.Substring(0, path.Length - ".class".Length) + ".java";
 
             //TODO: Искать по разбивкам файлов и тд, лучше взять объём больше стоп слов (с избытком из других файлов), чем пропустить файл целиком.
-            if (!FileExistsCaseSensitive(path))
-                return null;
+            //if (!FileExistsCaseSensitive(path))
+            //    return null;
 
             foreach (string s in File.ReadAllLines(path))
             {
@@ -49,6 +104,12 @@ namespace Localizer.DataExtractors
                 else if (s.Contains("LoadingUtils", StringComparison.OrdinalIgnoreCase))
                 {
                     stopWords.AddRange(s.Split('"').Where((item, index) => index % 2 != 0));
+                }
+                //StarfarerSettings
+                else if (s.Contains("StarfarerSettings", StringComparison.OrdinalIgnoreCase))
+                {
+                    string clear = s[s.IndexOf("StarfarerSettings", StringComparison.OrdinalIgnoreCase)..];
+                    stopWords.AddRange(clear.Split('"').Where((item, index) => index % 2 != 0).Take(2));
                 }
 
             }
