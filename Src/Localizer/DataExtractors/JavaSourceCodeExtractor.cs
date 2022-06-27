@@ -15,8 +15,9 @@ namespace Localizer.DataExtractors
             if(path.EndsWith(".class"))
                 path = path.Substring(0, path.Length - ".class".Length) + ".java";
 
-            if (!File.Exists(path))
-                return stopWords;
+            //TODO: Искать по разбивкам файлов и тд, лучше взять объём больше стоп слов (с избытком из других файлов), чем пропустить файл целиком.
+            if (!FileExistsCaseSensitive(path))
+                return null;
 
             foreach (string s in File.ReadAllLines(path))
             {
@@ -24,6 +25,32 @@ namespace Localizer.DataExtractors
                 {
                     stopWords.AddRange(s.Split('"').Where((item, index) => index % 2 != 0));
                 }
+                //jSONObject
+                else if (s.Contains("jSONObject.", StringComparison.OrdinalIgnoreCase))
+                {
+                    stopWords.AddRange(s.Split('"').Where((item, index) => index % 2 != 0));
+                }
+                else if (s.Contains(".optDouble", StringComparison.OrdinalIgnoreCase))
+                {
+                    stopWords.AddRange(s.Split('"').Where((item, index) => index % 2 != 0));
+                }
+                else if (s.Contains(".optInt", StringComparison.OrdinalIgnoreCase))
+                {
+                    stopWords.AddRange(s.Split('"').Where((item, index) => index % 2 != 0));
+                }
+                else if (s.Contains(".optString", StringComparison.OrdinalIgnoreCase))
+                {
+                    stopWords.AddRange(s.Split('"').Where((item, index) => index % 2 != 0));
+                }else if (s.Contains(".optBoolean", StringComparison.OrdinalIgnoreCase))
+                {
+                    stopWords.AddRange(s.Split('"').Where((item, index) => index % 2 != 0));
+                }
+                //LoadingUtils
+                else if (s.Contains("LoadingUtils", StringComparison.OrdinalIgnoreCase))
+                {
+                    stopWords.AddRange(s.Split('"').Where((item, index) => index % 2 != 0));
+                }
+
             }
 
             return stopWords;
@@ -47,6 +74,21 @@ namespace Localizer.DataExtractors
             }
 
             return stopWords;
+        }
+
+        public static bool FileExistsCaseSensitive(string filename)
+        {
+            try
+            {
+                string name = Path.GetDirectoryName(filename);
+
+                return name != null
+                       && Array.Exists(Directory.GetFiles(name), s => s == Path.GetFullPath(filename));
+            }
+            catch(Exception e)
+            {
+                return false;
+            }
         }
 
         private static bool IsIgnoredLine(string s)

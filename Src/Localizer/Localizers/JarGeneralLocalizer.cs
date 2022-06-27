@@ -68,6 +68,12 @@ namespace Localizer.Localizers
                             className = className[0..className.IndexOf('$')] + ".class";
 
                         var fileStopWords = JavaSourceCodeExtractor.GetStopWords(Path.Combine(tempDecompiledPath, className.Replace('/','\\')));
+                        if (fileStopWords == null)
+                        {
+                            stream.Close();
+                            continue;
+                        }
+
                         if (stopWords.TryGetValue(GetClassGroupName(entry.Name), out var sws))
                             fileStopWords.AddRange(sws);
 
