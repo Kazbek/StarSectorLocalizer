@@ -15,7 +15,7 @@ namespace Localizer.Decompilers
             // Configure the process using the StartInfo properties.
             process.StartInfo.FileName = "java";
             string decompilerAbsolutePath = Path.GetFullPath("Decompilers/cfr-0.152.jar");
-            process.StartInfo.Arguments = $"-jar \"{decompilerAbsolutePath}\" \"{jarFileAbsolutePath}\" --outputdir \"{decompiledFolderAbsolutePath}\"";
+            process.StartInfo.Arguments = $"-jar \"{decompilerAbsolutePath}\" \"{jarFileAbsolutePath}\" --outputdir \"{decompiledFolderAbsolutePath}\" --silent true";
             process.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
             process.Start();
             process.WaitForExit();// Waits here for the process to exit.

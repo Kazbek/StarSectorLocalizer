@@ -114,6 +114,25 @@ namespace Localizer.DataExtractors
 
             }
 
+/*
+.toLowerCase().contains("experience")
+
+.equals("Shield arc".toLowerCase()
+.toUpperCase()
+
+.equals("frozen1")
+
+str.contains("star")
+
+.endsWith("_wing")
+
+new Faction("independent")
+
+startsWith("enRef_")
+
+replaceFirst("mRef_", "")
+*/
+
             return stopWords;
         }
 
@@ -164,7 +183,8 @@ namespace Localizer.DataExtractors
         private static List<string> ignoredStartLines = new List<string>
         {
             "import com",
-            "package com"
+            "package com",
+            " *"
         };
     }
 }

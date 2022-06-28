@@ -1,0 +1,30 @@
+{
+	"trade":"Торговый караван",
+	"tradeLiner":"Пассажирский флот",
+	"tradeSmuggler":"Контрабандист",
+	"smallTrader":"Бизнесмен",
+	
+	"patrolSmall":"Пикет",
+	"patrolMedium":"Патруль",
+	"patrolLarge":"Подразделение",
+	
+	"inspectionFleet":"Инспекционный флот",
+	"taskForce":"Оперативная группа",
+	
+	"scavengerSmall":"Старатель",
+	"scavengerMedium":"Падальщик",
+	"scavengerLarge":"Спасательный флот",
+	
+	"foodReliefFleet":"Конвой с гуманитарной помощью",
+	#"foodReliefFleet":"Relief Fleet",
+	
+	"mercScout":"Наемник разведчик",
+	"mercBountyHunter":"Охотник за головами",
+	"mercPrivateer":"Мародер",
+	"mercPatrol":"Патруль наемников",
+	"mercArmada":"Флот наемников",
+	
+	"battlestation":"Боевая станция",
+	
+	#"":"",
+}
