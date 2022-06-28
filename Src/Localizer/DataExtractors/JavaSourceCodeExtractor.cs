@@ -76,32 +76,7 @@ namespace Localizer.DataExtractors
 
             foreach (string s in File.ReadAllLines(path))
             {
-                if(s.Contains(".alias", StringComparison.OrdinalIgnoreCase))
-                {
-                    stopWords.AddRange(s.Split('"').Where((item, index) => index % 2 != 0));
-                }
-                //jSONObject
-                else if (s.Contains("jSONObject.", StringComparison.OrdinalIgnoreCase))
-                {
-                    stopWords.AddRange(s.Split('"').Where((item, index) => index % 2 != 0));
-                }
-                else if (s.Contains(".optDouble", StringComparison.OrdinalIgnoreCase))
-                {
-                    stopWords.AddRange(s.Split('"').Where((item, index) => index % 2 != 0));
-                }
-                else if (s.Contains(".optInt", StringComparison.OrdinalIgnoreCase))
-                {
-                    stopWords.AddRange(s.Split('"').Where((item, index) => index % 2 != 0));
-                }
-                else if (s.Contains(".optString", StringComparison.OrdinalIgnoreCase))
-                {
-                    stopWords.AddRange(s.Split('"').Where((item, index) => index % 2 != 0));
-                }else if (s.Contains(".optBoolean", StringComparison.OrdinalIgnoreCase))
-                {
-                    stopWords.AddRange(s.Split('"').Where((item, index) => index % 2 != 0));
-                }
-                //LoadingUtils
-                else if (s.Contains("LoadingUtils", StringComparison.OrdinalIgnoreCase))
+                if (forAllQuotesDetect.Any(t => s.Contains(t, StringComparison.OrdinalIgnoreCase)))
                 {
                     stopWords.AddRange(s.Split('"').Where((item, index) => index % 2 != 0));
                 }
@@ -111,27 +86,9 @@ namespace Localizer.DataExtractors
                     string clear = s[s.IndexOf("StarfarerSettings", StringComparison.OrdinalIgnoreCase)..];
                     stopWords.AddRange(clear.Split('"').Where((item, index) => index % 2 != 0).Take(2));
                 }
-
             }
 
-/*
-.toLowerCase().contains("experience")
 
-.equals("Shield arc".toLowerCase()
-.toUpperCase()
-
-.equals("frozen1")
-
-str.contains("star")
-
-.endsWith("_wing")
-
-new Faction("independent")
-
-startsWith("enRef_")
-
-replaceFirst("mRef_", "")
-*/
 
             return stopWords;
         }
@@ -149,12 +106,61 @@ replaceFirst("mRef_", "")
             foreach (string s in File.ReadAllLines(path))
             {
                 foreach (var a in advices)
+                {
                     if (s.Contains($".{a}") && !IsIgnoredLine(s))
+                    {
                         stopWords.Add(a);
+                        continue;
+                    }
+
+                    foreach(string t in adviceSearchTemplates)
+                        if(s.Contains(string.Format(t, a)))
+                        {
+                            stopWords.Add(a);
+                            continue;
+                        }
+                }
+                    
             }
 
             return stopWords;
         }
+
+        private static List<string> adviceSearchTemplates = new List<string>
+        {
+            " {0} =",
+            ".contains(\"{0}\"",
+            ".equals(\"{0}\"",
+            "\"{0}\".toLowerCase().equals(",
+            "\"{0}\".toUpperCase().equals(",
+            ".endsWith(\"{0}\"",
+            ".endsWith(\"{0}\"",
+            ".startsWith(\"{0}\"",
+
+            ".getAbility(\"{0}\"", //get set
+            ".setSkillLevel(\"{0}\"",
+
+            ".hasHullMod(\"{0}\""
+
+            /*
+            .toLowerCase().contains("experience")
+
+            .equals("Shield arc".toLowerCase()
+            .toUpperCase()
+
+            .equals("frozen1")
+
+            str.contains("star")
+
+            .endsWith("_wing")
+
+            new Faction("independent")
+
+            startsWith("enRef_")
+
+            replaceFirst("mRef_", "")
+            */
+        };
 
         public static bool FileExistsCaseSensitive(string filename)
         {
@@ -179,6 +185,19 @@ replaceFirst("mRef_", "")
 
             return false;
         }
+
+        private static List<string> forAllQuotesDetect = new List<string>
+        {
+            ".alias",
+            //jSONObject
+            "jSONObject.",
+            ".optDouble",
+            ".optInt",
+            ".optString",
+            ".optBoolean",
+            //LoadingUtils
+            "LoadingUtils"
+        };
 
         private static List<string> ignoredStartLines = new List<string>
         {
