@@ -15,7 +15,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JarDiffExplorer", "Src\JarD
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Patcher", "Src\Patcher\Patcher.csproj", "{062B31A7-ADB2-437E-ABD3-3C9F1C4989D3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Translation", "Translation\Translation.csproj", "{E1B71BBB-20C3-4A4E-AD22-36630211A4FC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Translation", "Translation\Translation.csproj", "{E1B71BBB-20C3-4A4E-AD22-36630211A4FC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CsvDiffExplorer", "Src\CsvDiffExplorer\CsvDiffExplorer.csproj", "{44B27473-BD52-4A28-8D6F-1B91270A2B9A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -47,6 +49,10 @@ Global
 		{E1B71BBB-20C3-4A4E-AD22-36630211A4FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1B71BBB-20C3-4A4E-AD22-36630211A4FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1B71BBB-20C3-4A4E-AD22-36630211A4FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44B27473-BD52-4A28-8D6F-1B91270A2B9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44B27473-BD52-4A28-8D6F-1B91270A2B9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44B27473-BD52-4A28-8D6F-1B91270A2B9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44B27473-BD52-4A28-8D6F-1B91270A2B9A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -57,6 +63,7 @@ Global
 		{982956E7-AABA-47BB-9424-961E759FD075} = {10BE4D61-9BF5-48FC-8AF0-1250ECFEF68D}
 		{301C8906-5971-41F8-8278-185961CF2BF2} = {10BE4D61-9BF5-48FC-8AF0-1250ECFEF68D}
 		{062B31A7-ADB2-437E-ABD3-3C9F1C4989D3} = {10BE4D61-9BF5-48FC-8AF0-1250ECFEF68D}
+		{44B27473-BD52-4A28-8D6F-1B91270A2B9A} = {10BE4D61-9BF5-48FC-8AF0-1250ECFEF68D}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8B61D300-3AD8-4D34-8760-99EE33AE2D18}

@@ -1,13 +1,18 @@
-﻿using Localizer.Data;
+﻿using CsvHelper;
+using CsvHelper.Configuration;
+using Localizer.Data;
 using Localizer.DataExtractors;
 using Localizer.Decompilers;
 using Localizer.Localizers;
+using Localizer.Utils.Json;
 using Localizer.ValueChangeDetectors.Fonts;
 using Playground.DiffCreators;
 using Playground.FileTakers;
 using Playground.PatchExplorer;
 using Playground.UncangedFilesList;
+using System.Data;
 using System.Diagnostics;
+using System.Globalization;
 
 namespace Playground
 {
@@ -71,15 +76,21 @@ namespace Playground
 
             //ProcyonDecompilerWrapper.Decompile(@"C:\StarSectorPlayground\DA2 com.fs.starfarer.campaign.comms.new", @"C:\StarSectorPlayground\DA2Class");
 
-            Process process = new Process();
+            /* Process process = new Process();
             // Configure the process using the StartInfo properties.
             process.StartInfo.FileName = "java";
             string decompilerAbsolutePath = @"C:\StarSectorPlayground\DA2\procyon-decompiler-0.6.0.jar";
             process.StartInfo.Arguments = $"-jar \"{decompilerAbsolutePath}\" -jar \"{@"C:\StarSectorPlayground\DA2\starfarer_obf.jar"}\" -o \"{@"C:\StarSectorPlayground\DA2\Class"}\"";
             process.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
             process.Start();
-            process.WaitForExit();// Waits here for the process to exit.
-        }
+            process.WaitForExit();// Waits here for the process to exit.*/
 
+            var dtOriginal = CsvUtils.Read(@"C:\StarSectorPlayground\Starsector v9.1\original\starsector-core\data\strings\descriptions.csv");
+
+            CsvUtils.Save(dtOriginal, @"C:\StarSectorPlayground\NewCsv.csv");
+
+            //var dtTranslated = CsvDataExtractor.Read(@"C:\StarSectorPlayground\Starsector v9.1\translation\starsector-core\data\strings\descriptions.csv");
+            var z = 1;
+        }
     }
 }
