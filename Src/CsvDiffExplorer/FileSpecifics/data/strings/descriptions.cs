@@ -111,7 +111,7 @@ namespace CsvDiffExplorer.FileSpecifics.data.strings
             }
 
             //XlsxUtils.SaveNotTranslated(dictExtended.Translations, @"C:\StarSectorPlayground\descriptions.csv.nottranslated.xlsx");
-
+            /*
             var gTranslate = XlsxUtils.ReadDictionary(@"C:\StarSectorPlayground\StarSector 0.95.1a-RC6\GoogleDocsTranslateHelpers\starsector-core\data\strings\descriptions.csv.translated.xlsx");
             int match = 0, miss = 0;
             foreach(var g in gTranslate)
@@ -139,7 +139,7 @@ namespace CsvDiffExplorer.FileSpecifics.data.strings
                 }
             }
             Console.WriteLine($"Google xlsx:match: {match}   miss: {miss}");
-
+            */
             string templatePath = @"C:\StarSectorPlayground\descriptions.csv.translation.json";
             Directory.CreateDirectory(Path.GetDirectoryName(templatePath));
             File.WriteAllText(templatePath, JsonUtil.Serialize(dictExtended));
