@@ -8,7 +8,7 @@ namespace Localizer.Dictionaries
 {
     public class CsvDictionary
     {
-        public List<string> TranslatedColumns;
-        public Dictionary<string, string> Translations;
+        public List<string> TranslatedColumns { get; set; }
+        public Dictionary<string, string> Translations { get; set; }
     }
 }

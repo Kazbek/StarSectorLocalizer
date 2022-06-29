@@ -25,17 +25,18 @@ namespace Patcher
 
                 if (translationFilePath.EndsWith(TranslationFilesNameConventions.JarTranslation.PostfixPattern))
                 {
-                    int translated = JarGeneralLocalizer.Localize(targetFilePath, JsonToTranslationDictionary.Parse(translationFilePath));
-                    Console.WriteLine($"[{translated}] \"{targetFilePath}\"");
+                    //int translated = JarGeneralLocalizer.Localize(targetFilePath, JsonToTranslationDictionary.Parse(translationFilePath));
+                    //Console.WriteLine($"[{translated}] \"{targetFilePath}\"");
                 }
                 else if (translationFilePath.EndsWith(TranslationFilesNameConventions.CsvTranslation.PostfixPattern))
                 {
-
+                    int translated = CsvGeneralLocalizer.Localize(targetFilePath, JsonToCsvDictionary.Parse(translationFilePath));
+                    Console.WriteLine($"[{translated}] \"{targetFilePath}\"");
                 }
                 else
                 {
-                    File.Replace(translationFilePath, targetFilePath, null);
-                    Console.WriteLine($"[REPLACED] \"{targetFilePath}\"");
+                    //File.Replace(translationFilePath, targetFilePath, null);
+                    //Console.WriteLine($"[REPLACED] \"{targetFilePath}\"");
                 }
             }
         }
