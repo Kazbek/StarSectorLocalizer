@@ -888,7 +888,7 @@
   " has a hazard rating of %s.": " имеет рейтинг опасности %s.",
   "Surveying requires (available)": "Требует исследование (доступно)",
   "Consumes (available)": "Потребляет (доступно)",
-  "You've acquired full survey data for ": "Вы получили полные данные обследования ",
+  "You've acquired full survey data for ": "Вы получили полные данные исследования ",
   "A preliminary examination from low orbit is required to determine the hazard rating, baseline surface conditions, and full survey requirements for ": "Предварительное исследование, с низкой орбиты, требуется для определения рейтинга опасности, базовых условий поверхности и требований для проведения полного исследования ",
   "No planet data is available, visit the system to acquire.": "Нет доступных данных о планете, посетите систему, чтобы получить.",
   "Only partial planet data is available.": "Доступны только частичные данные о планете.",
