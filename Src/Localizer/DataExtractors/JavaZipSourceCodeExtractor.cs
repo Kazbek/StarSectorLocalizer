@@ -17,10 +17,14 @@ namespace Localizer.DataExtractors
 
         public List<string> GetAllowedToReplaceByAdvices(string path, List<string> advices)
         {
+            List<string> allCode = new List<string>();
             List<string> lines = new List<string>();
+            if (advices.Count == 0)
+                return lines;
+
             path = path.Replace('/', '\\');
             var entry = _archive.Entries.SingleOrDefault(t => t.FullName == path);
-            if(entry == null || advices.Count == 0)
+            if(entry == null)
             {
                 Console.WriteLine($"[CLASS NOT DECOMPILED] \"{path}\"");
                 return lines;
@@ -33,11 +37,12 @@ namespace Localizer.DataExtractors
                     string line = reader.ReadLine();
                     bool notIgnored = true;
                     foreach (var s in ignoredStartLines)
-                        if (line.StartsWith(s) || advices.All(a => !s.Contains(a)))
+                        if (line.StartsWith(s) || advices.All(a => !line.Contains(a)))
                         {
                             notIgnored = false;
                             break;
                         }
+                    allCode.Add(line);
                     if (notIgnored)
                         lines.Add(line);
                 }
@@ -47,7 +52,7 @@ namespace Localizer.DataExtractors
 
             FilterWordsByAdvices(lines, allowed, advices);
             FilterSensetiveConstantStrings(lines, allowed, advices);
-            FilterSpecific(lines, allowed, advices);
+            FilterSpecific(lines, allowed, advices, allCode);
 
             return allowed;
         }
@@ -95,7 +100,7 @@ namespace Localizer.DataExtractors
             }
         }
 
-        private void FilterSpecific(List<string> code, List<string> allowed, List<string> advices)
+        private void FilterSpecific(List<string> code, List<string> allowed, List<string> advices, List<string> allCode)
         {
             foreach (string s in code)
             {
@@ -111,6 +116,18 @@ namespace Localizer.DataExtractors
                     foreach (var r in clear.Split('"').Where((item, index) => index % 2 != 0).Take(2))
                         allowed.Remove(r);
                 }
+            }
+
+            for(int i = 0; i < allCode.Count - 1; i++)
+            {
+                if (allCode[i] == "    public String getId() {")
+                    foreach(var a in advices)
+                        if(allCode[i + 1] == $"        return \"{a}\";")
+                        {
+                            allowed.Remove(a);
+                            break;
+                        }
+
             }
         }
 
@@ -146,6 +163,57 @@ namespace Localizer.DataExtractors
             ".getAbility(\"{0}\"", //get set
             ".setSkillLevel(\"{0}\"",
 
+            //com.fs.starfarer.api.SettingsAPI
+            ".getBonusXP(\"{0}\")",
+            ".getFloat(\"{0}\")",
+            ".getBoolean(\"{0}\")",
+            ".getBoolean(\"{0}\")",
+            ".getColor(\"{0}\")",
+            ".getSprite(\"{0}\")",
+            ".openStream(\"{0}\")",
+            ".loadText(\"{0}\")",
+            ".loadJSON(\"{0}\")",
+            ".loadCSV(\"{0}\")",
+            ".getDescription(\"{0}\"",
+            ".getCodeFor(\"{0}\")",
+            ".getWeaponSpec(\"{0}\")",
+            ".loadTexture(\"{0}\")",
+            ".getVariant(\"{0}\")",
+            ".getPlugin(\"{0}\")",
+            ".getSkillSpec(\"{0}\")",
+            ".getString(\"{0}\")",
+            ".getAbilitySpec(\"{0}\")",
+            ".getTerrainSpec(\"{0}\")",
+            ".getEventSpec(\"{0}\")",
+            ".getCustomEntitySpec(\"{0}\")",
+            ".getDefaultEntriesForRole(\"{0}\")",
+            ".getCommoditySpec(\"{0}\")",
+            ".getHullSpec(\"{0}\")",
+            ".getNewPluginInstance(\"{0}\")",
+            ".getControlStringForEnumName(\"{0}\")",
+            ".getIndustrySpec(\"{0}\")",
+            ".getInt(\"{0}\")",
+            ".getSpecialItemSpec(\"{0}\")",
+            ".readTextFileFromCommon(\"{0}\")",
+            ".fileExistsInCommon(\"{0}\")",
+            ".deleteTextFileFromCommon(\"{0}\")",
+            ".getDesignTypeColor(\"{0}\")",
+            ".doesVariantExist(\"{0}\")",
+            ".getJSONObject(\"{0}\")",
+            ".getJSONArray(\"{0}\")",
+            ".createBaseFaction(\"{0}\")",
+            ".getShipSystemSpec(\"{0}\")",
+            ".setFloat(\"{0}\"",
+            ".setBoolean(\"{0}\"",
+            ".getMissionSpec(\"{0}\")",
+            ".getBarEventSpec(\"{0}\")",
+            ".getFloatFromArray(\"{0}\"",
+            ".getIntFromArray(\"{0}\"",
+            ".getIntFromArray(\"{0}\")",
+            ".getControlDescriptionForEnumName(\"{0}\")",
+            ".unloadTexture(\"{0}\")",
+            ".forceMipmapsFor(\"{0}\"",
+
             ".hasHullMod(\"{0}\""
         };
 
@@ -159,7 +227,23 @@ namespace Localizer.DataExtractors
             ".optString",
             ".optBoolean",
             //LoadingUtils
-            "LoadingUtils"
+            "LoadingUtils",
+
+            "= new thisnew(",
+
+            //com.fs.starfarer.api.SettingsAPI
+            "loadJSON",
+            "loadCSV",
+            "loadText",
+            "getEntriesForRole",
+            "addEntryForRole",
+            "removeEntryForRole",
+            "addDefaultEntryForRole",
+            "removeDefaultEntryForRole",
+            "getSpec",
+            "putSpec",
+            "getSpr",
+            "writeTextFileToCommon",
         };
 
         private static List<string> ignoredStartLines = new List<string>

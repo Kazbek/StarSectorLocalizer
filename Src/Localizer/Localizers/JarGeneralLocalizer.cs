@@ -65,7 +65,7 @@ namespace Localizer.Localizers
                         if (stopWords.TryGetValue(GetClassGroupName(entry.Name), out var sws))
                             fileStopWords.AddRange(sws);*/
 
-                        var utf8Strings = javaClassExtractor.GetUtf8Entries();
+                        var utf8Strings = javaClassExtractor.GetUtf8Entries().Where(t => dictionary.ContainsKey(t)).ToList();
 
                         utf8Strings = javaZipSourceCodeExtractor.GetAllowedToReplaceByAdvices(className, utf8Strings);
 
