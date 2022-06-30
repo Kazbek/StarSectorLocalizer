@@ -20,7 +20,7 @@ namespace Localizer.DataExtractors
             _javaClass = new JavaClass(new KaitaiStream(data));
         }
 
-        public List<string> GetUtf8Entries(List<string> stopWords = null)
+        public List<string> GetUtf8Entries()
         {
             //var data = JavaClass.FromFile(@"C:\StarSectorPlayground\ooOO.class");
             //Or parse structure from a byte array:
@@ -40,14 +40,15 @@ namespace Localizer.DataExtractors
                         //Console.WriteLine(item.Tag + ": " + sub.Value);
                         entries.Add(sub.Value);
                     }
-                    if(sub.Value == "fleet")
-                    {
-                        var z = 1;
-                    }
-                }else if(item.CpInfo is JavaClass.StringCpInfo st)
-                {
-                    var z = 1;
+                    //if(sub.Value == "fleet")
+                    //{
+                    //    var z = 1;
+                    //}
                 }
+                //else if(item.CpInfo is JavaClass.StringCpInfo st)
+                //{
+                //    var z = 1;
+                //}
                 //else
                 //{
                 //    Console.WriteLine(item.Tag + ": " + item.CpInfo.ToString());
@@ -86,9 +87,6 @@ namespace Localizer.DataExtractors
                     entries.Remove(m.NameAsStr);
                 }
             }
-
-            if (stopWords != null)
-                entries = entries.Except(stopWords).ToList();
 
             return entries;
         }
