@@ -128,6 +128,8 @@ namespace Localizer.DataExtractors
 
         private static List<string> adviceSearchTemplates = new List<string>
         {
+            ".{0}",
+            "{0}.",
             " {0} =",
             ".contains(\"{0}\"",
             ".equals(\"{0}\"",

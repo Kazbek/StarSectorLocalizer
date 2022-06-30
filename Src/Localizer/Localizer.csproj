@@ -20,6 +20,9 @@
     <None Update="Decompilers\cfr-0.152.jar">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Update="Decompilers\CFRZip-0.152.jar">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Update="Decompilers\procyon-decompiler-0.6.0.jar">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
