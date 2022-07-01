@@ -165,11 +165,10 @@ namespace Localizer.Localizers
 
         public static byte[] ReplaceBytes(byte[] src, byte[] search, byte[] repl)
         {
-            byte[] dst = null;
             int index = FindBytes(src, search);
             if (index >= 0)
             {
-                dst = new byte[src.Length - search.Length + repl.Length];
+                byte[] dst = new byte[src.Length - search.Length + repl.Length];
                 // before found array
                 Buffer.BlockCopy(src, 0, dst, 0, index);
                 // repl copy
@@ -181,8 +180,32 @@ namespace Localizer.Localizers
                     dst,
                     index + repl.Length,
                     src.Length - (index + search.Length));
+                return ReplaceBytes(dst, search, repl, index + repl.Length);
             }
-            return dst;
+            return src;
+        }
+
+        public static byte[] ReplaceBytes(byte[] src, byte[] search, byte[] repl, int startPos)
+        {
+            int index = FindBytes(src, search, startPos);
+            if (index >= 0)
+            {
+                byte[] dst = new byte[src.Length - search.Length + repl.Length];
+                // before found array
+                Buffer.BlockCopy(src, 0, dst, 0, index);
+                // repl copy
+                Buffer.BlockCopy(repl, 0, dst, index, repl.Length);
+                // rest of src array
+                Buffer.BlockCopy(
+                    src,
+                    index + search.Length,
+                    dst,
+                    index + repl.Length,
+                    src.Length - (index + search.Length));
+
+                return ReplaceBytes(dst, search, repl, index + repl.Length);
+            }
+            return src;
         }
 
         public static void ClearFolder(string path)
