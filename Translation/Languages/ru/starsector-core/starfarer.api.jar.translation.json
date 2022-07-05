@@ -637,7 +637,7 @@
   "Ground defense strength: %s": "Сила наземной обороны: %s",
   "Make improvements...": "Улучшить...",
   "Production increased by %s ": "Производство увеличено на %s ",
-  "Increases production by %s ": " увеличивает производство на %s ",
+  "Increases production by %s ": "Увеличивает производство на %s ",
   "Each improvement made at a colony doubles the number of ": "Каждое улучшение внутри одной колонии удваивает количество ",
   " points required to make an additional improvement.": " очков для последующего улучшения.",
   " points": null,
