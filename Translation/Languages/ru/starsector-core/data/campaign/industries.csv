@@ -1,0 +1,94 @@
+id,name,cost mult,build time,income,upkeep,downgrade,upgrade,tags,data,image,plugin,desc,order,disruptDanger
+population,Население и инфраструктура,,,10,3,,,"population, unraidable, no_saturation_bombardment",,graphics/icons/industry/population.png,com.fs.starfarer.api.impl.campaign.econ.impl.PopulationAndInfrastructure,"Базовая инфраструктура, необходимая для поддержки данного населения, от шатких орбитальных жилых модулей до мегаполисов и всего, что между ними.",100,
+farming,Сельское хозяйство,15,60,,1,,,"farming, industry, rural",,graphics/icons/industry/farming.png,com.fs.starfarer.api.impl.campaign.econ.impl.Farming,"Сельское хозяйство - это ремесло и технология, столь же древние, как и сама цивилизация; на протяжении тысяч циклов человечество использовало силу естественных, модифицированных и искусственных биологических машин для поддержания жизни. Так было всегда, так будет до тех пор, пока люди остаются людьми.",200,LOW
+aquaculture,Аквакультура,50,60,,3,,,"farming, industry, rural",,graphics/icons/industry/aquaculture.png,com.fs.starfarer.api.impl.campaign.econ.impl.Farming,"Сельское хозяйство в водном мире требует значительных первоначальных инвестиций в биоинженерию подходящих видов, но как только процесс начнется, население сможет управлять фермами по выращиванию водорослей и рыболовства, не требуя особого специального обучения или оборудования.",210,MEDIUM
+mining,Добыча ископаемых,20,60,,2,,,"mining, industry, industrial",,graphics/icons/industry/mining.png,com.fs.starfarer.api.impl.campaign.econ.impl.Mining,"Металлические и металлоидные руды, органические вещества и летучие соединения - все это требует тяжелого оборудования, специальной инфраструктуры и квалифицированной рабочей силы для добычи. Тяжелая работа привлекает определенный тип людей, и администрация, которая не желает время от времени смотреть в другую сторону, может столкнуться с нехваткой персонала.",300,MEDIUM
+techmining,Добыча технологий,30,45,,2,,,"techmining, industry, industrial",,graphics/icons/industry/techmining.png,com.fs.starfarer.api.impl.campaign.econ.impl.TechMining,"Добыча древних технологий - это искусство восстановления ценных артефактов из руин Домена. Требуются специальные инструменты для борьбы с уникальными опасностями и экспертное мнение, чтобы знать, где можно найти неплохие артефакты. Самые старые технари - это странный народ, верящий в талисманы удачи и отказывающийся работать без своих ритуалов.",400,MEDIUM
+refining,Очистка,45,90,,3,,,"refining, industry, industrial",,graphics/icons/industry/refining.png,com.fs.starfarer.api.impl.campaign.econ.impl.Refining,"Плавильные заводы здесь перерабатывают руды и трансплутонические руды в металлы и трансплутоники соответственно. Робототехника с дистанционным управлением обычно используется для выполнения самых опасных задач.",500,MEDIUM
+spaceport,Космопорт,10,15,,3,,megaport,"spaceport, important, structure",,graphics/icons/industry/spaceport.png,com.fs.starfarer.api.impl.campaign.econ.impl.Spaceport,"Структура предназначенная для погрузки и разгрузки грузов и выполнения основного ремонта звездолетов. Колония без космопорта практически недоступна для межзвездной торговли.",150,HIGH
+megaport,Мегапорт,60,150,,4,spaceport,,"spaceport, structure",,graphics/icons/industry/megaport.png,com.fs.starfarer.api.impl.campaign.econ.impl.Spaceport,"Огромный космопорт, где звезды могут касаться земли. Управляемые порталы посадочных модулей и бронированные топливные баки соединены подъездными путями и короткомагистральными грузовыми трамваями, питающими обширные складские районы и логистические терминалы, что делает колонию значительно более доступной.",151,EXTREME
+lightindustry,Легкая промышленность,45,90,,8,,,"lightindustry, industry, rural",,graphics/icons/industry/light_industry.png,com.fs.starfarer.api.impl.campaign.econ.impl.LightIndustry,"Производит товары домашнего обихода и предметы роскоши. Одна из немногих отраслей, относительно не затронутых коллапсом из-за своей низкотехнологичной природы.",1400,MEDIUM
+heavyindustry,Тяжелая промышленность,100,120,,12,,orbitalworks,"heavyindustry, uses_blueprints, industry, industrial",,graphics/icons/industry/heavy_industry.png,com.fs.starfarer.api.impl.campaign.econ.impl.HeavyIndustry,"Централизованная производственная инфраструктура для производства тяжелого промышленного оборудования, предметов снабжения и оружия. Также способен производить едва пригодные для космического полета звездолеты; для улучшения качества производства может быть установлена наноковка.",1600,HIGH
+orbitalworks,Орбитальные заводы,60,150,,12,heavyindustry,,"heavyindustry, uses_blueprints, industry, industrial",,graphics/icons/industry/orbital_works.png,com.fs.starfarer.api.impl.campaign.econ.impl.HeavyIndustry,"Централизованная производственная инфраструктура для производства тяжелого промышленного оборудования, предметов снабжения и оружия. Также способен производить едва пригодные для космического полета звездолеты; для улучшения качества производства может быть установлена наноковка.
+
+Модернизирован орбитальным компонентом, который еще больше облегчает конструкцию корабля, что приводит к меньшему количеству производственных дефектов.",1700,HIGH
+fuelprod,Производство топлива,90,120,,10,,,"fuelprod, industry, industrial",,graphics/icons/industry/fuel_production.png,com.fs.starfarer.api.impl.campaign.econ.impl.FuelProduction,"Это предприятие производит топливо для звездолетов, жизненную кровь межзвездной цивилизации. При отсутствии высокотехнологичных компонентов производство топлива является трудоемким и медленным процессом.",1800,HIGH
+#advfuelprod,Усовершенствованное производство топлива,120,60,,5,fuelprod,,fuelprod,,graphics/icons/industry/advanced_fuel_production.png,com.fs.starfarer.api.impl.campaign.econ.impl.FuelProduction,"Огромный высокотехнологичный завод производит топливо для звездолетов, жизненную кровь межзвездной цивилизации.",1900,
+commerce,Коммерция,90,90,,3,,,"industry, urban",,graphics/icons/industry/commerce.png,com.fs.starfarer.api.impl.campaign.econ.impl.TradeCenter,"Правила, гранты и инфраструктура для поощрения процветающей независимой торговли. Значительно снижает степень прямого контроля администрации над колонией.",1950,MEDIUM
+station_base,Орбитальная станция,,,,,,,"station, parent_item, important, structure",station,graphics/icons/industry/station_category.png,com.fs.starfarer.api.impl.campaign.econ.impl.OrbitalStation,"Космическая станция, которая способна поддерживать дружественные флоты вблизи $market и должна быть уничтожена перед вторжением или бомбардировкой.
+
+Доступно несколько вариантов, причем различия, как правило, заключаются в тактических подходах, а не в общей силе.",2000,
+orbitalstation,Орбитальная станция - Низкотехнологичная,50,90,,3,,battlestation,"station, sub_item, unraidable, structure","{
+radius:55,
+variant:station1_Standard,
+fleetName:Orbital Station,
+}",graphics/icons/industry/orbital_station.png,com.fs.starfarer.api.impl.campaign.econ.impl.OrbitalStation,"Низкотехнологичная космическая станция, отличающаяся тяжелой броней и средней огневой мощью.
+
+Должна быть уничтожена перед вторжением или бомбардировкой.",2010,
+battlestation,Боевая станция - Низкотехнологичная,100,120,,4,orbitalstation,starfortress,"station, battlestation, unraidable, structure","{
+radius:65,
+variant:station2_Standard,
+fleetName:Battlestation,
+}",graphics/icons/industry/battlestation.png,com.fs.starfarer.api.impl.campaign.econ.impl.OrbitalStation,"Космическая станция, дополненная тяжелым бастионом и точечными защитными цитаделями.
+
+Должна быть уничтожена перед вторжением или бомбардировкой.",2020,
+starfortress,Звездная крепость - Низкотехнологичная,200,180,,5,battlestation,,"station, starfortress, unraidable, structure","{
+radius:70,
+variant:station3_Standard,
+fleetName:Star Fortress
+}",graphics/icons/industry/battlestation.png,com.fs.starfarer.api.impl.campaign.econ.impl.OrbitalStation,"Бронированная боевая станция с оборонительными дронами класса Мерлон и обширным минным полем.
+
+Должна быть уничтожена перед вторжением или бомбардировкой.",2030,
+orbitalstation_mid,Орбитальная станция - Средняя линия,50,90,,3,,battlestation_mid,"station, sub_item, unraidable, structure","{
+radius:55,
+variant:station1_midline_Standard,
+fleetName:Orbital Station,
+}",graphics/icons/industry/orbital_station.png,com.fs.starfarer.api.impl.campaign.econ.impl.OrbitalStation,"Космическая станция средней линии, обладающая большой огневой мощью с одной стороны и быстрым осевым вращением.
+
+Должна быть уничтожена перед вторжением или бомбардировкой.",2040,
+battlestation_mid,Боевая станция - Средняя линия,100,120,,4,orbitalstation_mid,starfortress_mid,"station, battlestation, unraidable, structure","{
+radius:65,
+variant:station2_midline_Standard,
+fleetName:Battlestation,
+}",graphics/icons/industry/battlestation.png,com.fs.starfarer.api.impl.campaign.econ.impl.OrbitalStation,"Космическая станция, дополненная модулями ракетной поддержки.
+
+Должна быть уничтожена перед вторжением или бомбардировкой.",2050,
+starfortress_mid,Звездная крепость - Средняя линия,200,180,,5,battlestation_mid,,"station, starfortress, unraidable, structure","{
+radius:70,
+variant:station3_midline_Standard,
+fleetName:Star Fortress
+}",graphics/icons/industry/battlestation.png,com.fs.starfarer.api.impl.campaign.econ.impl.OrbitalStation,"Бронированная боевая станция с оборонительными дронами класса Равелин и обширным минным полем.
+
+Должна быть уничтожена перед вторжением или бомбардировкой.",2060,
+orbitalstation_high,Орбитальная станция - Высокотехнологичная,50,90,,3,,battlestation_high,"station, sub_item, unraidable, structure","{
+radius:55,
+variant:station1_hightech_Standard,
+fleetName:Orbital Station,
+}",graphics/icons/industry/orbital_station.png,com.fs.starfarer.api.impl.campaign.econ.impl.OrbitalStation,"Высокотехнологичная космическая станция с тяжелыми вращающимися щитами, комплектом истребителей и средней огневой мощью.
+
+Должна быть уничтожена перед вторжением или бомбардировкой.",2070,
+battlestation_high,Боевая станция - Высокотехнологичная,100,120,,4,orbitalstation_high,starfortress_high,"station, battlestation, unraidable, structure","{
+radius:65,
+variant:station2_hightech_Standard,
+fleetName:Battlestation,
+}",graphics/icons/industry/battlestation.png,com.fs.starfarer.api.impl.campaign.econ.impl.OrbitalStation,"Космическая станция, дополненная оборонительной цитаделью с большой огневой мощью.
+
+Должна быть уничтожена перед вторжением или бомбардировкой.",2080,
+starfortress_high,Звездная крепость - Высокотехнологичная,200,180,,5,battlestation_high,,"station, starfortress, unraidable, structure","{
+radius:70,
+variant:station3_hightech_Standard,
+fleetName:Star Fortress
+}",graphics/icons/industry/battlestation.png,com.fs.starfarer.api.impl.campaign.econ.impl.OrbitalStation,"Бронированная боевая станция с оборонительными дронами класса Горгулья и прицельными минными телепортами дальнего действия.
+
+Должна быть уничтожена перед вторжением или бомбардировкой.",2090,
+grounddefenses,Наземная оборона,30,60,,2,,heavybatteries,"grounddefenses, unraidable, tactical_bombardment, structure",,graphics/icons/industry/ground_defenses.png,com.fs.starfarer.api.impl.campaign.econ.impl.GroundDefenses,"Рассредоточенная, полуавтономная сеть небольших скрытых оружейных установок, которая делает перспективу прямого наземного нападения и даже простых рейдов чрезвычайно дорогостоящим мероприятием. Только подавляющая орбитальная бомбардировка или массивное исследование и поиск слабых сторон обороны, могут подавить наземную оборону.  ",2200,
+heavybatteries,Тяжелые батареи,60,90,,3,grounddefenses,,"grounddefenses, unraidable, tactical_bombardment, structure",,graphics/icons/industry/heavy_batteries.png,com.fs.starfarer.api.impl.campaign.econ.impl.GroundDefenses,"Бронированные подземные батареи дополняют рассеянную сеть небольших скрытых установок оружия. Наземные батареи способны на действительно потрясающую огневую мощь, хотя это проявляется только в усложнении наземных операций, поскольку ни один капитан корабля не будет настолько глуп, чтобы соваться под их огонь.",2300,
+patrolhq,Штаб патруля,60,60,,8,,militarybase,"patrol, unraidable, tactical_bombardment, structure",,graphics/icons/industry/patrol_hq.png,com.fs.starfarer.api.impl.campaign.econ.impl.MilitaryBase,"Ангары, отсеки для технического обслуживания, командно-диспетчерский центр, казармы и логистические операции, необходимые для размещения войск по всей звездной системе. После создания военные патрули будут охотиться на пиратов и защищать дружественные конвои.",2400,
+militarybase,Военная база,90,120,,10,patrolhq,highcommand,"military, unraidable, tactical_bombardment, industry",,graphics/icons/industry/military_base.png,com.fs.starfarer.api.impl.campaign.econ.impl.MilitaryBase,"Это оборудование позволяет войскам действовать по все звездной системе. Любое такое военное предприятие - это огромная логистическая работа, требующая координации десятков, возможно, сотен звездных кораблей и тысяч офицеров, экипажей и солдат.",2500,
+highcommand,Верховное командование,30,120,,14,militarybase,,"command, unraidable, tactical_bombardment, industry",,graphics/icons/industry/high_command.png,com.fs.starfarer.api.impl.campaign.econ.impl.MilitaryBase,"Транстеллярная империя возможна только благодаря особому корпусу офицеров и бюрократов, наделенных властью над ресурсами целых звездных систем. Верховное командование позволяет организовывать и проводить военные операции по всему сектору.",2600,
+lionsguard,Штаб-квартира гвардии Льва,90,60,,6,,,"military, unraidable, tactical_bombardment, structure",,graphics/icons/industry/lions_guard.png,com.fs.starfarer.api.impl.campaign.econ.impl.LionsGuardHQ,"Штаб-квартира ужасающей личной гвардии Филиппа ""Лев Синдрии"" Андрада. Обладая превосходной подготовкой и доступом к самому лучшему оборудованию, которое можно купить, фанатичная лояльность Гвардии поддерживается с помощью системы льгот и стимулов, которые одновременно повышают и изолируют гвардию от регулярных вооруженных сил Диктата.",2650,
+planetaryshield,Планетарный щит,150,90,,3,,,"grounddefenses, structure",,graphics/icons/industry/planetary_shield.png,com.fs.starfarer.api.impl.campaign.econ.impl.PlanetaryShield,"Оболочка заряженной плазмы, засеянная экзотическими виртуальными частицами, производящими эффекты, которые нарушают боевую эффективность дальней бомбардировки и даже вторжения небольших судов. Планетарный щит может постоянно заряжаться и управляться центральным источником и представляет собой грозное препятствие для любого вида наземного нападения.",2700,EXTREME
+waystation,Промежуточная станция,20,60,,2,,,"waystation, structure",,graphics/icons/industry/waystation.png,com.fs.starfarer.api.impl.campaign.econ.impl.Waystation,"Склад снабжения и обслуживания межзвездных флотов. Увеличивает доступность колонии.",155,MEDIUM
+cryosanctum,Криосанктум,150,90,,5,,,"cryosanctum, structure",,graphics/icons/industry/cryosanctum.png,com.fs.starfarer.api.impl.campaign.econ.impl.Cryosanctum,"Огромный, похожий на гробницу склеп, построенный для хранения тех, кто решил рискнуть криосном, чтобы пережить это смутное время и проснуться в более цивилизованном веке. Сами криоподы имеют незначительный размер, по сравнению с многократно превосходящей вспомогательной инфраструктурой, массивными автоматизированными системами безопасности и противокорабельными батареями, размещенными в разветвленной подземной крепости-лабиринте.",3000,EXTREME
+,,,,,,,,,,,,,,
+cryorevival,Установка для криовыживания,60,60,,5,,,"cryorevival, structure",,graphics/icons/industry/cryorevival.png,com.fs.starfarer.api.impl.campaign.econ.impl.Cryorevival,"Необходимые средства для массового возрождения и ассимиляции пассажиров Криослипера эпохи Доменов. Значительно увеличивает рост населения.",3200,MEDIUM
