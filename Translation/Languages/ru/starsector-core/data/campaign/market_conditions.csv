@@ -1,0 +1,165 @@
+name,id,planetary,decivRemove,script,desc,icon,order
+Урбанизированное государство,urbanized_polity,,TRUE,com.fs.starfarer.api.impl.campaign.econ.UrbanizedPolity,"Густонаселенный космополитический мегаполис с коммерческими центрами и различными индустриальными парками.Люди из всех слоев общества жили и работали до самой смерти в этом великолепном куполообразном городе.Снижение производства еды и увеличение спроса на предметы роскоши и товары первой необходимости.",graphics/icons/markets/urbanized_polity.png,130
+Промышленная политика,industrial_polity,,TRUE,com.fs.starfarer.api.impl.campaign.econ.IndustrialPolity,"Местные органы власти активно поощряют развитие промышленности за счет всех других интересов.",graphics/icons/markets/urbanized_polity.png,130
+Аграрное государство,rural_polity,,TRUE,com.fs.starfarer.api.impl.campaign.econ.RuralPolity,"Малонаселенное государство, состоящее из усадеб и изолированных городков. В эти неспокойные времена к посторонним обычно относятся с подозрением. Увеличение производства продуктов питания и снижение спроса на предметы роскоши и предметы первой необходимости.",graphics/icons/markets/rural_polity.png,130
+Поток беженцев,large_refugee_population,,TRUE,com.fs.starfarer.api.impl.campaign.econ.LargeRefugeePopulation,"Отчаянные беженцы, спасающиеся от бедствия, оказались здесь. Беженцы живут на дне общества, практически не имея возможностей для улучшения положения, перегружают инфраструктуру из-за чрезмерного потребления жизненных ресурсов, что приводит к снижению местной производительности труда Среди тех, кто пытается спастись от убогих условий жизни, скорее всего, найдутся более перспективные члены экипажа.",graphics/icons/markets/refugee_population.png,140
+Вольтурнские фермы лобстеров,volturnian_lobster_pens,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"Скрещивание нескольких видов Старой Земли и немного воображения произвели на свет это существо, которое обитает в морских глубинах Вольтурна. Говорят вкус у них уникальный.",graphics/icons/markets/lobster_pens.png,137
+Спрос на контрабанду,vice_demand,,TRUE,com.fs.starfarer.api.impl.campaign.econ.ViceDemand,"Здесь очень высокий спрос на контрабанду.",graphics/icons/markets/vice_demand.png,145
+Организованная преступность,organized_crime,,TRUE,com.fs.starfarer.api.impl.campaign.econ.OrganizedCrime,"Преступная деятельность производит наркотики и извлеченные органы. Увеличивает спрос на тяжелое оружие (как у различных криминальных авторитетов, так и у местного населения) и морской пехоты (у местных властей).",graphics/icons/markets/organized_crime.png,148
+Пограничный край,frontier,,TRUE,com.fs.starfarer.api.impl.campaign.econ.Frontier,"Вдали от заселенных мест, простое выживание, уверенность в себе и только самое необходимое - вот правила пограничья. Повышенный спрос на оружие и предметы первой необходимости, снижение спроса на предметы роскоши.",graphics/icons/markets/frontier.png,130
+Центр утилизации судов,shipbreaking_center,,TRUE,com.fs.starfarer.api.impl.campaign.econ.ShipbreakingCenter,"Главный центр разборки кораблей в этом регионе, армии и другие клиенты будут отправлять сюда сломанные корабли для разборки.",graphics/icons/markets/shipbreaking.png,360
+Торговый центр,trade_center,,TRUE,com.fs.starfarer.api.impl.campaign.econ.TradeCenter,"Крупный торговый центр, торговые суда со всего сектора причаливают сюда, ожидая найти покупателя на свои товары или покупки дешевых товаров, которые могут принести большую прибыль.",graphics/icons/markets/trade_center.png,280
+Бесплодная земля,decivilized,,,com.fs.starfarer.api.impl.campaign.econ.Decivilized,"Здесь нет стабильного правящего государства. Цивилизация разрушена, и нынешнее население фактически неизвестно, хотя группы выживших, бандитов и мародеров можно обнаружить.",graphics/icons/markets/decivilized.png,130
+Вне закона,decivilized_subpop,,,com.fs.starfarer.api.impl.campaign.econ.DecivilizedSubpop,"Хотя $market показал признаки восстановления цивилизации, это все еще нелегальное место, где все носят винтовку Гаусса и полно выживших грабителей и хищников.",graphics/icons/markets/decivilized.png,130
+Заброшенная Станция,abandoned_station,,TRUE,com.fs.starfarer.api.impl.campaign.econ.AbandonedStation,"Эта станция заброшена.",graphics/icons/markets/abandoned.png,130
+Домашнее ремесло,cottage_industry,,TRUE,com.fs.starfarer.api.impl.campaign.econ.CottageIndustry,"$market имеет легкую промышленность, основанную на старой технологии и интенсивной рабочей силе.Растущий спрос на органическое топливо и материалы, которые обеспечивают товары ручной работы, хотя и неэффективны, но забавны.",graphics/icons/markets/cottage_industry.png,230
+Аванпост,outpost,,TRUE,com.fs.starfarer.api.impl.campaign.econ.Outpost,"$market больше похоже на гарнизон или военный корабль с жестким набором командных структур.Это, хотя и повышает стабильность, требует некоторого персонала для обработки внутренних транзакций безопасности.",graphics/icons/markets/outpost.png,130
+Лютеранская церковь,luddic_majority,,TRUE,com.fs.starfarer.api.impl.campaign.econ.LuddicMajority,"Если $market будет контролироваться луддской церковью, его стабильность будет значительно улучшена,иначе она будет уменьшена.А аскетизм в лютеранской доктрине приводит к снижению спроса на местную роскошь.",graphics/icons/markets/luddic_majority.png,142
+Индукционные минные поля,stealth_minefields,,TRUE,com.fs.starfarer.api.impl.campaign.econ.StealthMinefields,"$market индукционные минные поля не только защищают от вторжений внешних врагов, но и обеспечивают безопасность для посещающих иностранных торговцев.Повышение стабильности.",graphics/icons/markets/stealth_mines.png,510
+Региональная столица,regional_capital,,TRUE,com.fs.starfarer.api.impl.campaign.econ.RegionalCapital,"Главный административный центр, который контролирует безопасность и логистику. Повышение стабильности.",graphics/icons/markets/capital.png,500
+Свободный порт,free_market,,TRUE,com.fs.starfarer.api.impl.campaign.econ.FreeMarket,"Местное Портовое управление не имеет четких правил в отношении товаров. Довольно мягкий иммиграционный контроль также привел к притоку большого количества иностранных граждан, хотя некоторые из них были очень подозрительными по своей природе. Из-за этого некоторые фракции смотрят на колонию с недоверием.",graphics/icons/markets/free_port.png,141
+Запрет иммиграции,closed_immigration,,TRUE,com.fs.starfarer.api.impl.campaign.econ.ClosedImmigration,"Официально иммиграция на $market не разрешена. Такая политика не только приведет к значительному замедлению темпов роста населения, но и создаст пространство для деятельности определенных преступников.",graphics/icons/markets/vice_demand.png,142
+,,,,,,,
+Мертвая земля World,uninhabitable,TRUE,,com.fs.starfarer.api.impl.campaign.econ.WorldUninhabitable,"Бесплодная планета, поверхность $market не только не имеет органической жизни,но и на планете нельзя вести сельскохозяйственную деятельность за пределами закрытой экосистемы.",graphics/icons/markets/uninhabitable_wide.png,10
+Ледяной мир,ice,TRUE,,com.fs.starfarer.api.impl.campaign.econ.WorldIce,"Средняя температура $market's намного ниже точки замерзания воды и некоторые обычные атмосферные газы падают в виде снега. Сугробы и ледники легких, летучих элементов могут быть легко добыты.",graphics/icons/markets/ice_world_wide.png,10
+Пустынный мир,desert,TRUE,,com.fs.starfarer.api.impl.campaign.econ.WorldDesert,"$market: пустынная планета.Только сухие растения поддерживают тонкую атмосферу и практически не могут выполнять сельскохозяйственные работы.",graphics/icons/markets/desert_world_wide.png,10
+Засушливый мир,arid,TRUE,,com.fs.starfarer.api.impl.campaign.econ.WorldArid,"$market покрыта обширными и сухими равнинами и пустошами. Поскольку водные ресурсы очень скудны, очень сложно развить крупное сельское хозяйство.",graphics/icons/markets/arid_world_wide.png,10
+Водный мир,water,TRUE,,com.fs.starfarer.api.impl.campaign.econ.WorldWater,"Климат $market является гостеприимным, но сельское хозяйство ограничивается в основном аквакультурой и узкоспециализированной инфраструктурой, необходимой для любого развития среды обитания и промышленности.",graphics/icons/markets/water_world_wide.png,10
+Мир джунглей,jungle,TRUE,,com.fs.starfarer.api.impl.campaign.econ.WorldJungle,"$market это влажный, теплый мир джунглей, покрытый буйной растительностью и экзотическими формами жизни, что затрудняет ведение сельского хозяйства и поддержание постоянной инфраструктуры.",graphics/icons/markets/jungle_world_wide.png,10
+Земной мир,terran,TRUE,,com.fs.starfarer.api.impl.campaign.econ.WorldTerran,"$market настолько похож по климату на Старую Землю, насколько это возможно в этом секторе, обеспечивая идеальные условия для ведения сельского хозяйства и поселения.",graphics/icons/markets/terran_world_wide.png,10
+Бесплодный пограничный мир,barren_marginal,TRUE,,com.fs.starfarer.api.impl.campaign.econ.WorldBarrenMarginal,"Окружающая среда пустынна и безжалостна, даже если человек оснащен воздушными масками и защитным снаряжением, ему все равно трудно выжить на $market, хотя некоторые инженерные терраформированные лишайники находят его достаточно дружелюбным.",graphics/icons/markets/barren_desert_wide.png,10
+Сумеречный мир,twilight,TRUE,,com.fs.starfarer.api.impl.campaign.econ.WorldTwilight,"Гравитационная сила прочно окутала планету, превратив $market в постоянно трансформирующийся мир во все времена года. Огромная разница в температуре между днем и ночью делает жизнь крайне суровой, даже на модернизированных объектах. Благодаря разумному использованию звездного щита и звездного зеркала была создана нежная экосфера и цивилизованный остров.",graphics/icons/markets/twilight_terran_world.png,10
+Мир тундры,tundra,TRUE,,com.fs.starfarer.api.impl.campaign.econ.WorldTundra,"$market после геохимической трансформации пригоден для обитания человека, но все еще находится на уровне ледникового периода старой земли. Хотя миллионы квадратных километров покрыты ледниками, хвойные леса и луга также существуют в некоторых уголках планеты.",graphics/icons/markets/tundra_terran_wide.png,10
+Вулканический мир,cryovolcanic,TRUE,,com.fs.starfarer.api.impl.campaign.econ.WorldUninhabitable,"Чрезвычайно холодный мир с метановым снегом, покрывающим аммиачные вулканы, которые извергаются в любое время. Звездное излучение катализирует летучие вещества с образованием кислорода и азота, в то время как водород вытесняется в космос.",graphics/icons/markets/cryo_world_wide.png,10
+,,,,,,,
+Диссидентское население,dissident,,TRUE,com.fs.starfarer.api.impl.campaign.econ.Dissident,"$market здесь собираются различные хулиганы,мятежники, либеральные мыслители, художники и другие нарушители спокойствия.Как полиция, так и толпа увеличили спрос на оружие и морские пехотинцы. В результате частых миграций также увеличивается число наемных экипажей.",graphics/icons/markets/dissidents.png,139
+Штаб-квартира,headquarters,,TRUE,com.fs.starfarer.api.impl.campaign.econ.Headquarters,"$market является центром военного командования и материально-технического обеспечения для правящей власти. Повышает стабильность рынка.
+
+Увеличивает качество и количество офицеров во флоте $market.",graphics/icons/markets/headquarters.png,360
+Комплекс гидропоники,hydroponics_complex,,TRUE,com.fs.starfarer.api.impl.campaign.econ.Hydroponics,"Сельскохозяйственные комплексы с герметичной биосферой, которые позволяют вести сельское хозяйство на орбите или на поверхности бесплодной планеты. Требуется работа экипажа и увеличивает спрос на органику и тяжелую технику.",graphics/icons/markets/hydroponics.png,120
+,,,,,,,
+Население,population_1,,TRUE,com.fs.starfarer.api.impl.campaign.econ.Population,"Несколько десятков человек живут здесь постоянно.",graphics/icons/markets/population01.png,20
+Население,population_2,,TRUE,com.fs.starfarer.api.impl.campaign.econ.Population,"Сотни людей населяют $market.",graphics/icons/markets/population02.png,20
+Население,population_3,,TRUE,com.fs.starfarer.api.impl.campaign.econ.Population,"Тысячи людей называют $market домом.",graphics/icons/markets/population03.png,20
+Население,population_4,,TRUE,com.fs.starfarer.api.impl.campaign.econ.Population,"Десятки тысяч людей живут на $market.",graphics/icons/markets/population04.png,20
+Население,population_5,,TRUE,com.fs.starfarer.api.impl.campaign.econ.Population,"$market является домом для сотен тысяч людей.",graphics/icons/markets/population05.png,20
+Население,population_6,,TRUE,com.fs.starfarer.api.impl.campaign.econ.Population,"На $market живут миллионы.",graphics/icons/markets/population06.png,20
+Население,population_7,,TRUE,com.fs.starfarer.api.impl.campaign.econ.Population,"$market это мир десятков миллионов.",graphics/icons/markets/population07.png,20
+Население,population_8,,TRUE,com.fs.starfarer.api.impl.campaign.econ.Population,"$market один из немногих миров в Секторе с населением в сотни миллионов.",graphics/icons/markets/population08.png,20
+Население,population_9,,TRUE,com.fs.starfarer.api.impl.campaign.econ.Population,"Драгоценное убежище для человечества в опасной галактике, $market является домом для миллиардов душ.",graphics/icons/markets/population09.png,20
+Население,population_10,,TRUE,com.fs.starfarer.api.impl.campaign.econ.Population,"$market является доминирующим населенным центром в Секторе, соперником Старой Земли, где проживают десятки миллиардов людей.",graphics/icons/markets/population10.png,20
+,,,,,,,
+,,,,,,,
+,,,,,,,
+# event-related market conditions,,,,,,,
+Дефицит еды,event_food_shortage,,TRUE,com.fs.starfarer.api.impl.campaign.econ.FoodShortage,"Временно отсутствует доступная еда на $market.
+- Стабильность снижена на $stabilityPenalty
+- Приблизительно нужно $neededFood единицы еды, для прекращения дефицита
+- Цены на продукты питания выросли из-за сокращения поставок продуктов питания
+- Повышение репутации и опыта от продажи продуктов питания",graphics/icons/markets/food_shortage.png,1000
+Недавние беспорядки,recent_unrest,,TRUE,com.fs.starfarer.api.impl.campaign.econ.RecentUnrest,"$market в последнее время потрясли некоторые события и даже если беспорядки закончились, последствия все еще продолжаются.",graphics/icons/markets/recent_unrest.png,2000
+Нарушение торговли,event_trade_disruption,,TRUE,com.fs.starfarer.api.impl.campaign.econ.TradeDisruption,"Tорговый флот, входящий и выходящий из $market, несет огромные потери при транспортировке, и виновником может быть война с пиратами.
+
+Затронуты следующие товары:
+$commoditySummary",graphics/icons/markets/trade_disruption.png,1100
+Контрабанда,event_smuggling,,TRUE,com.fs.starfarer.api.impl.campaign.econ.Smuggling,"$market испытывает большой объем контрабандной деятельности.
+
+- Стабильность снижена на $smugglingPenalty",graphics/icons/markets/smuggling.png,1000
+Награда системы,event_bounty,,TRUE,com.fs.starfarer.api.impl.campaign.econ.SystemBounty,,graphics/icons/markets/bounty.png,1000
+Неконтролируемое ядро ИИ,rogue_ai_core,,TRUE,com.fs.starfarer.api.impl.campaign.econ.RogueAICore,"Внутри работает неконтролируемое ядро ИИ, которое наносит вред, его дальнейшие планы и амбиции неизвестны, кроме как сохранить себя.
+
+Как минимум, необходимость быть начеку всвязи с его возможных действий делает повседневные операции менее эффективными и создает благодатную почву для тревожных слухов.",graphics/icons/markets/rogue_ai.png,1200
+ИИ администратор (скрытый),ai_core_admin,,TRUE,com.fs.starfarer.api.impl.campaign.econ.AICoreAdmin,Hidden condition to track when the core becomes un-removable. Does not need an icon.,graphics/icons/markets/rogue_ai.png,1000
+Пиратская атака,pirate_activity,,TRUE,com.fs.starfarer.api.impl.campaign.intel.bases.PirateActivity,"Есть признаки того, что пираты нацелены на торговлю и колонии в этой системе - от портовых инспекторов, на которых оказывается давление, чтобы они закрывали глаза на несоответствий в грузовых декларациях, до возросшей преступной активности.
+
+У пиратов, скорее всего, есть где-то недалеко база.",graphics/icons/markets/pirate_activity.png,1300
+Путь луддикских фанатиков,pather_cells,,TRUE,com.fs.starfarer.api.impl.campaign.intel.bases.LuddicPathCells,,graphics/icons/markets/pather_cells.png,1400
+,,,,,,,
+# stand-alone conditions,,,,,,,
+Нарушение торговли,shipping_disruption,,TRUE,com.fs.starfarer.api.impl.campaign.econ.ShippingDisruption,,graphics/icons/markets/trade_disruption.png,1000
+,,,,,,,
+# misc,,,,,,,
+Ретрансляционная станция связи (скрытая),comm_relay,,TRUE,com.fs.starfarer.api.impl.campaign.econ.CommRelayCondition,Hidden condition; does not need icon.,,
+,,,,,,,
+,,,,,,,
+# procgen conditions,,,,,,,
+Пригодна для жизни,habitable,TRUE,,com.fs.starfarer.api.impl.campaign.econ.Habitable,Люди могут выжить на поверхности $market без защиты.,graphics/icons/markets/habitable.png,21
+,,,,,,,
+,,,,,,,
+Разбросанные руины,ruins_scattered,TRUE,,com.fs.starfarer.api.impl.campaign.econ.BaseHazardCondition,"До Великого Краха этот мир был лишь слегка затронут великим проектом. Остались только разбросанные, разбитые купола, возможно, хранящие спрятанные тайники с ценными материалами.",graphics/icons/markets/ruins_scattered.png,100
+Средние руины,ruins_widespread,TRUE,,com.fs.starfarer.api.impl.campaign.econ.BaseHazardCondition,"Согласно данным на радаре, вы можете найти довольно много сломанных структур и уникальных композитных строений из карбида вольфрама на $market и это свидетельствует о попытках колонизации во времена позднего Домена.",graphics/icons/markets/ruins_widespread.png,100
+Большие руины,ruins_extensive,TRUE,,com.fs.starfarer.api.impl.campaign.econ.BaseHazardCondition,"Разрушенные города можно найти по всей поверхности $market, множество разбитых железнодорожных путей, заброшенных фабрик, гидропонных ферм и скелеты башен связи..",graphics/icons/markets/ruins_extensive.png,100
+Огромные руины,ruins_vast,TRUE,,com.fs.starfarer.api.impl.campaign.econ.BaseHazardCondition,"$market покрыта обширными руинами; города, заводы, шахты, фермы, дома. Огромное колличество трупов, обвитых спасательными приспособлениями, товарами, инструментами и оружием. Этот мир является могилой гордости проекта Домена.",graphics/icons/markets/ruins_vast.png,100
+,,,,,,,
+,,,,,,,
+Холодная,cold,TRUE,,com.fs.starfarer.api.impl.campaign.econ.BaseHazardCondition,"Низкая температура поверхности, для безопасной эксплуатации требуется специальное оборудование, а также особые значение для жизнеобеспечения и инфраструктуры.",graphics/icons/markets/cold.png,25
+Экстремально холодная,very_cold,TRUE,,com.fs.starfarer.api.impl.campaign.econ.BaseHazardCondition,"На $market для безопасной работы при очень низких температурах требуется специальное оборудование и протоколы, а также комплексное логистическое управление, жизнеобеспечение и инфраструктура.",graphics/icons/markets/cold_extreme.png,25
+,,,,,,,
+Горячая,hot,TRUE,,com.fs.starfarer.api.impl.campaign.econ.BaseHazardCondition,"Высокотемпературные условия $market требуют специального оборудования для нормальной работы, что усложняет жизнеобеспечение и инфраструктуру.",graphics/icons/markets/hot.png,25
+Экстремально горячая,very_hot,TRUE,,com.fs.starfarer.api.impl.campaign.econ.BaseHazardCondition,"Экстремальная жара требует специального оборудования и протокола для безопасной работы на $market, что серьезно усложняет логистику, жизнеобеспечение и долгосрочную стабильность инфраструктуры.",graphics/icons/markets/hot_extreme.png,25
+,,,,,,,
+,,,,,,,
+Тектоническая активность,tectonic_activity,TRUE,,com.fs.starfarer.api.impl.campaign.econ.BaseHazardCondition,"Поверхность $market нестабильна и подвержена сильным землетрясениям. Любые сооружения требуют усиления, а любые раскопки будут связаны с большим риском.",graphics/icons/markets/tectonic.png,26
+Экстремальная тектоническая активность,extreme_tectonic_activity,TRUE,,com.fs.starfarer.api.impl.campaign.econ.BaseHazardCondition,"$market's сотрясается от сильных землетрясений и вулканических извержений. Любые операции потребуют особой осторожности и использования огромного количества систем безопасности, чтобы избежать печальных последствий. Здания в этом мире долго не простоят.",graphics/icons/markets/tectonic_extreme.png,26
+,,,,,,,
+,,,,,,,
+Нет атмосферы,no_atmosphere,TRUE,,com.fs.starfarer.api.impl.campaign.econ.BaseHazardCondition,"На $market нет заметной атмосферы. Поверхность планеты подвержена сильному воздействию из космоса, устойчивым облучением радиации и метеоритным дождям.",graphics/icons/markets/atmosphere_none.png,27
+Разреженная атмосфера,thin_atmosphere,TRUE,,com.fs.starfarer.api.impl.campaign.econ.BaseHazardCondition,"Разреженная атмосфера решительно цепляется за поверхность $market's.",graphics/icons/markets/atmosphere_thin.png,27
+Токсичная атмосфера,toxic_atmosphere,TRUE,,com.fs.starfarer.api.impl.campaign.econ.BaseHazardCondition,"Атмосфера $market исключительно токсична и агрессивна, разъедает незащищенные поверхности и требует герметизации любых жилых помещений.",graphics/icons/markets/atmosphere_toxic.png,27
+Плотная атмосфера,dense_atmosphere,TRUE,,com.fs.starfarer.api.impl.campaign.econ.BaseHazardCondition,"Поверхность $market покрыта плотной атмосферой, верхний слой атмосферы изобилует бурными вихрями, пронизывающими атмосферу до самой поверхности. Датчики здесь могут быть повреждены, поэтому будьте осторожны при выполнении операций.",graphics/icons/markets/atmosphere_dense.png,27
+,,,,,,,
+,,,,,,,
+Мягкий климат,mild_climate,TRUE,,com.fs.starfarer.api.impl.campaign.econ.MildClimate,"Климат $market приветлив и послушен; легкий туман встречает каждый восход солнца, прежде чем превратиться в мягкие облака, которые красиво светятся на каждом закате.",graphics/icons/markets/climate_mild.png,28
+Экстремальные погодные условия,extreme_weather,TRUE,,com.fs.starfarer.api.impl.campaign.econ.BaseHazardCondition,"Яростные бури разлетаются по небу $market. Несмотря на впечатляющее зрелище с орбиты, это создает суровые условия на поверхности, что делает транспортировку и проживание затруднительным.",graphics/icons/markets/weather_extreme.png,28
+,,,,,,,
+Низкая гравитация,low_gravity,TRUE,,com.fs.starfarer.api.impl.campaign.econ.LowGravity,"Хотя гравитация низкая, все же она не нулевая. На поверхности $market рабочий процесс и эксплуатация тяжелой техники усложняются из-за измененных условий трения, веса и давления..",graphics/icons/markets/gravity_low.png,24
+Высокая гравитация,high_gravity,TRUE,,com.fs.starfarer.api.impl.campaign.econ.HighGravity,"Гравитации на поверхности $market очень высока. Хотя люди оснащены мощным экзоскелетом, жизнь здесь - это пытка, так как каждое движение изнуряет. Из-за высокого шанса обрушения построек, строительство должно проходить под строгим контролем, иначе может случиться коллапс.",graphics/icons/markets/gravity_high.png,24
+,,,,,,,
+Радиоактивный,irradiated,TRUE,,com.fs.starfarer.api.impl.campaign.econ.BaseHazardCondition,"Из-за длительного воздействия радиации на поверхность $market, можно выжить только под куполом. из-за постоянного воздействия радиации, наноматериалы и оборудование будет быстро разрушаться.",graphics/icons/markets/irradiated.png,29
+,,,,,,,
+,,,,,,,
+Враждебная биосфера,inimical_biosphere,TRUE,,com.fs.starfarer.api.impl.campaign.econ.LCAttractorLow,"Биосфера $market смертельна для незащищенных людей. Хотя естественное состояние планеты очаровывает всех биологов, техника должна пройти строгие контроли качества, прежде чем их допустят к выполнению рутинных задач на поверхности.",graphics/icons/markets/inimical_biosphere.png,30
+,,,,,,,
+Водная поверхность,water_surface,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"Это водный мир, в котором нет твердой поверхности, на которую можно было бы приземлиться или строить. Операции осложняются необходимостью специальной подготовки и техники.",graphics/icons/markets/water_covered.png,31
+,,,,,,,
+Сумеречная,poor_light,TRUE,,com.fs.starfarer.api.impl.campaign.econ.BaseHazardCondition,"Из-за большого расстояния до звезды, она дает мало света и солнечной энергии для $market.",graphics/icons/markets/poor_light.png,32
+Темная,dark,TRUE,,com.fs.starfarer.api.impl.campaign.econ.BaseHazardCondition,"$market темная планета, основным источником света является искусственное освещение.",graphics/icons/markets/darkness.png,32
+,,,,,,,
+Метеоритное столкновение,meteor_impacts,TRUE,,com.fs.starfarer.api.impl.campaign.econ.BaseHazardCondition,"Этот мир постоянно бомбардируется метеорами разных размеров. Все люди, которые живут здесь или временно проживают, должны почаще смотреть вверх. И если вы хотите поселиться здесь навсегда, лучше всего жить в укрепленном здании глубоко под землей.",graphics/icons/markets/meteor_impacts.png,33
+,,,,,,,
+,,,,,,,
+Загрязненная,pollution,,,com.fs.starfarer.api.impl.campaign.econ.Pollution,"Человеческая промышленность нанесла непоправимый ущерб миру, воздух полон диоксинов, соединений серы и пыли. Гниющая радиоактивная пыль разбросана повсюду. Шторм из пластикового мусора и обломков пенобетона поднимается в небо в ужасающим смерчем.",graphics/icons/markets/pollution.png,110
+,,,,,,,
+,,,,,,,
+Малые залежи руды,ore_sparse,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"На $market есть редкие залежи руды, но они представляют скорее академический, чем промышленный интерес, поскольку их добыча экономически не выгодна.",graphics/icons/markets/ore_sparse.png,50
+Небольшое количество руды,ore_moderate,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"$market содержит умеренные залежи руды, которые при правильном подходе можно выгодно использовать.",graphics/icons/markets/ore_moderate.png,50
+Массивные залежи руды,ore_abundant,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"$market имеет богатые, обширные и ценные месторождения руды.",graphics/icons/markets/ore_abundant.png,50
+Богатые залежи руды,ore_rich,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"Богатые месторождения полезных ископаемых искрятся на поверхности $market, но только амбициозные предприниматели смогут извлечь их них богатую прибыль.",graphics/icons/markets/ore_rich.png,50
+Очень богатые залежи руды,ore_ultrarich,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"Под поверхностью $market находятся огромные залежи руды и золота, такое обилие богатства свело бы с ума даже легендарных горнодобывающих мегакорпов эпохи Доменов.",graphics/icons/markets/ore_ultrarich.png,50
+,,,,,,,
+,,,,,,,
+Малые залежи редкой руды,rare_ore_sparse,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"На $market есть редкие залежи трансплутонические руды, но они представляют скорее академический, чем промышленный интерес, поскольку их добыча экономически не выгодна.",graphics/icons/markets/rareore_sparse.png,60
+Небольшое количество редкой руды,rare_ore_moderate,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"$market содержит скромные трансплутонические месторождения, которые при правильном подходе можно выгодно использовать..",graphics/icons/markets/rareore_moderate.png,60
+Массивные залежи редкой руды,rare_ore_abundant,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"Обильные транслутонические залежи на $market, достаточной богаты, для того чтобы заинтересовать любого достойного полководца или магната.",graphics/icons/markets/rareore_abundant.png,60
+Богатые залежи редкой руды,rare_ore_rich,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"Богатые транслутонические месторождения распространяются на $market и их потенциальной стоимости достаточно, чтобы побудить людей, обладающих достаточным влиянием попасть сюда.",graphics/icons/markets/rareore_rich.png,60
+Очень богатые залежи редкой руды,rare_ore_ultrarich,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"Трансплутонические залежи, мерцающие с невероятной плотностью на сенсорной решетке, предрекают появление силы, с помощью которой можно создать могучие военные флоты, чтобы сжечь миры до тла или создание величайшей империи, богатство которая никогда не угаснет.",graphics/icons/markets/rareore_ultrarich.png,60
+,,,,,,,
+,,,,,,,
+Малое количество летучих веществ,volatiles_trace,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"Найденные здесь следы летучих веществ едва ли окупятся.",graphics/icons/markets/volatiles_trace.png,40
+Небольшое количество летучих веществ,volatiles_diffuse,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"Здесь можно найти летучие вещества, которых может быть достаточно для промышленной добычи.",graphics/icons/markets/volatiles_diffuse.png,40
+Богатое количество летучих вещества,volatiles_abundant,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"Обильные летучие вещества которые экономически выгодно добывать из $market.",graphics/icons/markets/volatiles_abundant.png,40
+Обильное количество летучих веществ,volatiles_plentiful,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"$market это источник летучих веществ мирового масштаба - богатый, глубокий и мощный.",graphics/icons/markets/volatiles_plentiful.png,40
+,,,,,,,
+,,,,,,,
+Следы органики,organics_trace,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"$market почти бесплодные органические запасы, хотя возможно немного добыть.",graphics/icons/markets/organics_trace.png,38
+Немного органики,organics_common,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"Экономически выгодные запасы органики можно найти на $market.",graphics/icons/markets/organics_common.png,38
+Много органики,organics_abundant,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"Река богатства течет под поверхностью $market - для тех, кто найдет ее и добудет.",graphics/icons/markets/organics_abundant.png,38
+Обильное количество органики,organics_plentiful,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"Ценная органическая материя изливается из глубин $market и затопляет землю. Эти темные и таинственные фонтаны указывают, что океан богатства находится под поверхностью.",graphics/icons/markets/organics_plentiful.png,38
+,,,,,,,
+,,,,,,,
+Бедные сельхозугодья,farmland_poor,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"Скудная почва на которой растут чахлые растения. Чтоб что-то тут вырастить, талант фермера должен граничить с его отчаяньем.",graphics/icons/markets/farmland_poor.png,70
+Нормальные сельхозугодья,farmland_adequate,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"Полная совместимость земли со Старой Землей позволяет выращивать любые культуры на $market.",graphics/icons/markets/farmland_adequate.png,70
+Богатые сельхозугодья,farmland_rich,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"$market поля вознаградят всех фермеров, которые занимаются фермерством на плодородных землях, в виде небывалого урожая.",graphics/icons/markets/farmland_rich.png,70
+Обильные сельхозугодья,farmland_bountiful,TRUE,,com.fs.starfarer.api.impl.campaign.econ.ResourceDepositsCondition,"$market это настоящий райский сад, рай жизни, полный красочных, пышных цветов, солнечных лучей и растений. Из-за обилия плодов, ветви низко провисают и поля золотого зерна переливаются на ветру.",graphics/icons/markets/farmland_bountiful.png,70
+,,,,,,,
+Орбитальная солнечная батарея,solar_array,TRUE,,com.fs.starfarer.api.impl.campaign.econ.SolarArray,"Эта планета имеет множество солнечных щитов или зеркал на орбите разумно расположенных, чтобы приблизить условия ее поверхности к земным.",graphics/icons/markets/solar_shade.png,101
