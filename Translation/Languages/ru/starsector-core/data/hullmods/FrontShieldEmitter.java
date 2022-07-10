@@ -40,15 +40,15 @@ public class FrontShieldEmitter extends BaseHullMod {
 	
 	public String getUnapplicableReason(ShipAPI ship) {
 		if (ship == null || ship.getShield() == null) {
-			return "У коробля нет щитов";
+			return "У корабля нет щитов";
 		}
 		
 		if (ship.getShield().getType() == ShieldType.FRONT) {
-			return "У коробля есть передние щиты";
+			return "У корабля есть передние щиты";
 		}
 		
 		if (ship.getVariant().getHullMods().contains("adaptiveshields")) {
-			return "Конфлик с генератором полного щита";
+			return "Конфликт с генератором полного щита";
 		}
 		
 		return null;
