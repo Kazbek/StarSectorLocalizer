@@ -15,8 +15,11 @@ namespace Patcher
 
             NameConventionFileChecker conventionFileChecker = new NameConventionFileChecker(translationPath, targetFolder);
 
+            int replaced = 0;
             foreach (string translationFilePath in Directory.GetFiles(translationPath, "*", SearchOption.AllDirectories))
             {
+                bool processJar = false;
+
                 //string targetFilePath = translationFilePath.Replace(translationPath, string.Empty);
 
                 //if (translationFilePath.Contains(TranslationFilesNameConventions.TranslationSuffix))
@@ -31,6 +34,9 @@ namespace Patcher
 
                 if(convention == TranslationFilesNameConventions.JarTranslation)
                 {
+                    if (!processJar)
+                        continue;
+
                     int translated = JarGeneralLocalizer.Localize(targetFilePath, JsonToTranslationDictionary.Parse(translationFilePath));
                     Console.WriteLine($"[{translated}] \"{targetFilePath}\"");
                 }
@@ -41,12 +47,14 @@ namespace Patcher
                 }
                 else if (convention == TranslationFilesNameConventions.TxtTranslation)
                 {
-
+                    bool translated = TxtGeneralLocalizer.Localize(targetFilePath, translationFilePath);
+                    Console.WriteLine($"[TXT][{translated}] \"{targetFilePath}\"");
                 }
                 else if (convention == TranslationFilesNameConventions.ReplaceFileConvention)
                 {
-                    File.Replace(translationFilePath, targetFilePath, null);
-                    Console.WriteLine($"[REPLACED] \"{targetFilePath}\"");
+                    File.Copy(translationFilePath, targetFilePath, true);
+                    replaced++;
+                    //Console.WriteLine($"[REPLACED] \"{targetFilePath}\"");
                 }
                 else
                 {
@@ -54,6 +62,8 @@ namespace Patcher
                     throw new ArgumentException($"UNMATHER CONVENTION: {translationFilePath} - {convention.PostfixPattern}");
                 }
             }
+
+            Console.WriteLine($"[REPLACED FILES][{replaced}]");
         }
     }
 }

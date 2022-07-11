@@ -12,7 +12,7 @@ namespace Localizer.NameConventions
 
         public static readonly TranslationNameConvention JarTranslation = new() { PostfixPattern = $".jar{TranslationSuffix}.json", DeletePattern = $"{TranslationSuffix}.json" };
         public static readonly TranslationNameConvention CsvTranslation = new() { PostfixPattern = $".csv{TranslationSuffix}.json", DeletePattern = $"{TranslationSuffix}.json" };
-        public static readonly TranslationNameConvention TxtTranslation = new() { PostfixPattern = $".csv{TranslationSuffix}.txt", DeletePattern = $"{TranslationSuffix}.txt" };
+        public static readonly TranslationNameConvention TxtTranslation = new() { PostfixPattern = $".txt{TranslationSuffix}.txt", DeletePattern = $"{TranslationSuffix}.txt" };
 
         public static readonly TranslationNameConvention ReplaceFileConvention = new();
 
