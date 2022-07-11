@@ -8,15 +8,20 @@ namespace Localizer.NameConventions
 {
     public static class TranslationFilesNameConventions
     {
-        public const string TranslationPostfix = ".translation.json";
+        public const string TranslationSuffix = ".translation";
 
-        public static TranslationNameConvention JarTranslation = new() { PostfixPattern = $".jar{TranslationPostfix}" };
-        public static TranslationNameConvention CsvTranslation = new() { PostfixPattern = $".csv{TranslationPostfix}" };
+        public static readonly TranslationNameConvention JarTranslation = new() { PostfixPattern = $".jar{TranslationSuffix}.json", DeletePattern = $"{TranslationSuffix}.json" };
+        public static readonly TranslationNameConvention CsvTranslation = new() { PostfixPattern = $".csv{TranslationSuffix}.json", DeletePattern = $"{TranslationSuffix}.json" };
+        public static readonly TranslationNameConvention TxtTranslation = new() { PostfixPattern = $".csv{TranslationSuffix}.txt", DeletePattern = $"{TranslationSuffix}.txt" };
 
+        public static readonly TranslationNameConvention ReplaceFileConvention = new();
+
+        public static readonly IReadOnlyList<TranslationNameConvention> TranslationTypes = new List<TranslationNameConvention> { JarTranslation, CsvTranslation, TxtTranslation };
     }
 
-    public struct TranslationNameConvention
+    public class TranslationNameConvention
     {
         public string PostfixPattern;
+        public string DeletePattern;
     }
 }
