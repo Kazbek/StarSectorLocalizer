@@ -85,11 +85,15 @@ namespace Playground
             process.Start();
             process.WaitForExit();// Waits here for the process to exit.*/
 
-            var dtOriginal = CsvUtils.Read(@"C:\StarSectorPlayground\Starsector v9.1\original\starsector-core\data\strings\descriptions.csv");
+            //var dtOriginal = CsvUtils.Read(@"C:\StarSectorPlayground\Starsector v9.1\original\starsector-core\data\strings\descriptions.csv");
 
-            CsvUtils.Save(dtOriginal, @"C:\StarSectorPlayground\NewCsv.csv");
+            //CsvUtils.Save(dtOriginal, @"C:\StarSectorPlayground\NewCsv.csv");
 
             //var dtTranslated = CsvDataExtractor.Read(@"C:\StarSectorPlayground\Starsector v9.1\translation\starsector-core\data\strings\descriptions.csv");
+
+
+            //JsonGeneralLocalizer.Localize(@"C:\StarSectorPlayground\StarSector 0.95.1a-RC6 Game\original\Starsector\starsector-core\data\campaign\channels.json", new Dictionary<string, string>());
+            //JsonGeneralLocalizer.Localize(@"C:\StarSectorPlayground\StarSector 0.95.1a-RC6 Game\original\Starsector\starsector-core\data\strings\tips.json", new Dictionary<string, string>());
             var z = 1;
         }
     }
