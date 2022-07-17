@@ -9,16 +9,16 @@ namespace Patcher
         //Непонятного качества вышел шрифт Orbitron12 (3 файла). Посмотреть позже может есть получше шрифты.
         static void Main(string[] args)
         {
-
             string translationPath = @"Languages\ru\";
             string targetFolder = @"C:\StarSectorPlayground\StarSector 0.95.1a-RC6 Game\original\Starsector\";
+
+            bool processJar = false;
 
             NameConventionFileChecker conventionFileChecker = new NameConventionFileChecker(translationPath, targetFolder);
 
             int replaced = 0;
             foreach (string translationFilePath in Directory.GetFiles(translationPath, "*", SearchOption.AllDirectories))
             {
-                bool processJar = false;
 
                 //string targetFilePath = translationFilePath.Replace(translationPath, string.Empty);
 
@@ -49,6 +49,11 @@ namespace Patcher
                 {
                     bool translated = TxtGeneralLocalizer.Localize(targetFilePath, translationFilePath);
                     Console.WriteLine($"[TXT][{translated}] \"{targetFilePath}\"");
+                }
+                else if (convention == TranslationFilesNameConventions.JsonTranslation)
+                {
+                    int translated = JsonGeneralLocalizer.Localize(targetFilePath, JsonToTranslationDictionary.Parse(translationFilePath));
+                    Console.WriteLine($"[JSON][{translated}] \"{targetFilePath}\"");
                 }
                 else if (convention == TranslationFilesNameConventions.ReplaceFileConvention)
                 {

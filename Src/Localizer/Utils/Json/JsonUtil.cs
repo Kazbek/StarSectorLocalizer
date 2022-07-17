@@ -6,7 +6,7 @@ namespace Localizer.Utils.Json
 {
     public static class JsonUtil
     {
-        private static readonly JsonSerializerOptions JsonSerializerOptions;
+        public static readonly JsonSerializerOptions JsonSerializerOptions;
         static JsonUtil()
         {
             JsonSerializerOptions = new JsonSerializerOptions

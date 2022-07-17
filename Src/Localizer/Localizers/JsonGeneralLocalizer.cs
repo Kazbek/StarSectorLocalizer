@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Localizer.Utils.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -34,9 +35,10 @@ namespace Localizer.Localizers
             using FileStream fs = File.Create(targetJsonPath);
             using var writer = new Utf8JsonWriter(fs, options: new JsonWriterOptions
             {
-                Indented = true
+                Indented = JsonUtil.JsonSerializerOptions.WriteIndented,
+                Encoder = JsonUtil.JsonSerializerOptions.Encoder
             });
-            doc.WriteTo(writer);
+            doc.WriteTo(writer, JsonUtil.JsonSerializerOptions);
 
             return localized;
         }
@@ -98,7 +100,7 @@ namespace Localizer.Localizers
                     }
                 }
             }
-            else if(jsonNode is JsonValue jsonValue)
+            /*else if(jsonNode is JsonValue jsonValue)
             {
                 if(jsonValue.TryGetValue(out string value) && value != null)
                 {
@@ -107,7 +109,7 @@ namespace Localizer.Localizers
                         jsonValue = (JsonValue) translation;
                 }
 
-            }
+            }*/
 
             return localized;
         }
