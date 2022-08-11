@@ -12,7 +12,7 @@ namespace Patcher
             string translationPath = @"Languages\ru\";
             string targetFolder = @"C:\StarSectorPlayground\StarSector 0.95.1a-RC6 Game\original\Starsector\";
 
-            bool processJar = false;
+            bool processJar = true;
 
             NameConventionFileChecker conventionFileChecker = new NameConventionFileChecker(translationPath, targetFolder);
 
