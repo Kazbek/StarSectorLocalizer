@@ -4,11 +4,18 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:StarSectorLauncher"
-    Shell.FlyoutBehavior="Disabled">
-
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
-
+    
+    Shell.FlyoutBehavior="Disabled"
+    TabBarBackgroundColor="#c7dcff">
+    <TabBar Route="Localization" >
+        <ShellContent
+            x:Name="localizationTab"
+            Title="Localization"
+            ContentTemplate="{DataTemplate local:Pages.LocalizationPage}"
+            Route="Localization" />
+        <ShellContent
+            Title="Home2"
+            ContentTemplate="{DataTemplate local:MainPage}"
+            Route="MainPage" />
+    </TabBar>
 </Shell>
