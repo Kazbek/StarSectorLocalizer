@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:translationViews="clr-namespace:StarSectorLauncher.Views.Translations"
+             xmlns:baseConverters="clr-namespace:StarSectorLauncher.Converters"
+             
+             xmlns:viewModel="clr-namespace:StarSectorLauncher.Pages"
+             x:DataType="viewModel:LocalizationPageViewModel"
+             
              x:Class="StarSectorLauncher.Pages.LocalizationPage"
              Title="">
     
@@ -9,5 +15,9 @@
             Text="Kazbek Localization Tool!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
+        <HorizontalStackLayout>
+            <Picker Title="Выберте источник перевода" ItemsSource="{Binding TranslationSources}" SelectedItem="{Binding SelectedTranslation}" ItemDisplayBinding="{Binding Converter={baseConverters:DisplayNameConverter}}"/>
+        </HorizontalStackLayout>
+        <translationViews:FromFileTranslationView/>
     </VerticalStackLayout>
 </ContentPage>
