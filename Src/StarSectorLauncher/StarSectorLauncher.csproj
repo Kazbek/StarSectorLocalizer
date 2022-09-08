@@ -59,6 +59,9 @@
 	  <MauiXaml Update="Views\Translations\FromFileTranslationView.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
+	  <MauiXaml Update="Views\Translations\FromGitHubTranslationView.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
 	</ItemGroup>
 
 </Project>

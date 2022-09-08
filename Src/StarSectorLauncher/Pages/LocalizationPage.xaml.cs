@@ -9,8 +9,12 @@ public partial class LocalizationPage : ContentPage
 {
 	public LocalizationPage()
 	{
+		LocalizationPageViewModel viewModel = new LocalizationPageViewModel();
+        VSLayout.Children.RemoveAt(VSLayout.Children.Count - 1);
 		InitializeComponent();
-		BindingContext = new LocalizationPageViewModel();
+		BindingContext = viewModel;
+		//viewModel.On
+		
 	}
 }
 
@@ -19,6 +23,7 @@ public partial class LocalizationPageViewModel : BaseViewModel
 	public ObservableCollection<SourceType> TranslationSources { get; set; } = new ObservableCollection<SourceType> { SourceType.Files, SourceType.GitHub };
 
 	[ObservableProperty]
+	//[]
     SourceType selectedTranslation = SourceType.Files;
 
     public enum SourceType 

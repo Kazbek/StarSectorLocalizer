@@ -11,8 +11,10 @@ namespace Patcher
         {
             string translationPath = @"Languages\ru\";
             string targetFolder = @"C:\StarSectorPlayground\StarSector 0.95.1a-RC6 Game\original\Starsector\";
+            string patchFolder = $"C:\\StarSectorPlayground\\Translation Patch\\{DateTime.Now.ToString("d")}\\";
 
             bool processJar = true;
+            bool createPatch = true;
 
             NameConventionFileChecker conventionFileChecker = new NameConventionFileChecker(translationPath, targetFolder);
 
@@ -65,6 +67,15 @@ namespace Patcher
                 {
                     Console.Write($"UNMATHER CONVENTION: {translationFilePath} - {convention.PostfixPattern}");
                     throw new ArgumentException($"UNMATHER CONVENTION: {translationFilePath} - {convention.PostfixPattern}");
+                }
+
+                if (createPatch)
+                {
+                    string relativePath = targetFilePath.Replace(targetFolder, string.Empty);
+                    string absolutePatchPath = Path.Combine(patchFolder, relativePath);
+
+                    Directory.CreateDirectory(Path.GetDirectoryName(absolutePatchPath));
+                    File.Copy(targetFilePath, absolutePatchPath, true);
                 }
             }
 

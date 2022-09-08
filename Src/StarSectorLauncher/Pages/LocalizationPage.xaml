@@ -10,14 +10,19 @@
              x:Class="StarSectorLauncher.Pages.LocalizationPage"
              Title="">
     
-    <VerticalStackLayout>
+    <VerticalStackLayout
+        x:Name="VSLayout">
         <Label 
             Text="Kazbek Localization Tool!"
             VerticalOptions="Center" 
             HorizontalOptions="Center" />
         <HorizontalStackLayout>
-            <Picker Title="Выберте источник перевода" ItemsSource="{Binding TranslationSources}" SelectedItem="{Binding SelectedTranslation}" ItemDisplayBinding="{Binding Converter={baseConverters:DisplayNameConverter}}"/>
+            <Picker Title="Выберте источник перевода"
+                    ItemsSource="{Binding TranslationSources}"
+                    SelectedItem="{Binding SelectedTranslation}"
+                    ItemDisplayBinding="{Binding Converter={baseConverters:DisplayNameConverter}}"/>
         </HorizontalStackLayout>
+        <ContentView />
         <translationViews:FromFileTranslationView/>
     </VerticalStackLayout>
 </ContentPage>
