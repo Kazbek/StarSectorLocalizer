@@ -11,6 +11,7 @@
              Title="">
     
     <VerticalStackLayout
+        Margin="20"
         x:Name="VSLayout">
         <Label 
             Text="Kazbek Localization Tool!"

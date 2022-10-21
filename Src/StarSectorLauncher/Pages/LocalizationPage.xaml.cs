@@ -1,7 +1,9 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using StarSectorLauncher.ViewModels;
+using StarSectorLauncher.Views.Translations;
 using System.Collections.ObjectModel;
 using System.ComponentModel.DataAnnotations;
+using static StarSectorLauncher.Pages.LocalizationPageViewModel;
 
 namespace StarSectorLauncher.Pages;
 
@@ -10,12 +12,24 @@ public partial class LocalizationPage : ContentPage
 	public LocalizationPage()
 	{
 		LocalizationPageViewModel viewModel = new LocalizationPageViewModel();
-        VSLayout.Children.RemoveAt(VSLayout.Children.Count - 1);
 		InitializeComponent();
 		BindingContext = viewModel;
-		//viewModel.On
+		viewModel.OnSourceChanged += ChangeSource;
 		
 	}
+
+	void ChangeSource(SourceType sourceType)
+	{
+        VSLayout.Children.RemoveAt(VSLayout.Children.Count - 1);
+
+		IView view = sourceType switch
+		{
+			SourceType.Files => new FromFileTranslationView(),
+			SourceType.GitHub => new FromGitHubTranslationView(),
+			_ => throw new NotImplementedException($"Тип {sourceType} не поддерживается")
+		};
+		VSLayout.Add(view);
+    }
 }
 
 public partial class LocalizationPageViewModel : BaseViewModel
@@ -26,7 +40,15 @@ public partial class LocalizationPageViewModel : BaseViewModel
 	//[]
     SourceType selectedTranslation = SourceType.Files;
 
-    public enum SourceType 
+    public delegate void SourceChanged(SourceType sourceType);
+    public event SourceChanged OnSourceChanged;
+
+    partial void OnSelectedTranslationChanged(SourceType value)
+	{
+        OnSourceChanged?.Invoke(value);
+	}
+
+	public enum SourceType 
 	{
 		[Display(Name = "Файлы")]
 		Files,
