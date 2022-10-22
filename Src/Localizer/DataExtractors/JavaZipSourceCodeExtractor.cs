@@ -12,7 +12,9 @@ namespace Localizer.DataExtractors
         private ZipArchive _archive;
         public JavaZipSourceCodeExtractor(string pathToZip)
         {
-            _archive = ZipFile.OpenRead(pathToZip);
+            //_archive = ZipFile.OpenRead(pathToZip);
+            var s = File.OpenRead(pathToZip);
+            _archive = new ZipArchive(s);
         }
 
         public List<string> GetAllowedToReplaceByAdvices(string path, List<string> advices)

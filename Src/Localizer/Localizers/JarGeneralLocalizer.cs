@@ -11,18 +11,22 @@ namespace Localizer.Localizers
 {
     public static class JarGeneralLocalizer
     {
-        public static int Localize(string zipPath, IDictionary<string, string> dictionary)
+        public static int Localize(string zipPath, IDictionary<string, string> dictionary, string decompilerPath)
         {
             int localizedStrings = 0;
             Console.WriteLine($"Process: {zipPath}");
 
-            string tempDecompiledPath = Path.Combine(Path.GetTempPath(),"Decompiled", Path.GetFileName(zipPath) + ".zip");
-            if(Directory.Exists(Path.GetDirectoryName(tempDecompiledPath)))
-                ClearFolder(tempDecompiledPath);
+            string tempDecompiledFolderPath = Path.Combine(Path.GetTempPath(), "StarSectorLocalizer", "Decompiled");
+            string tempDecompiledPath = Path.Combine(tempDecompiledFolderPath, Path.GetFileName(zipPath) + ".zip");
+            if (Directory.Exists(tempDecompiledFolderPath))
+                ClearFolder(tempDecompiledFolderPath);
+
+            Directory.CreateDirectory(tempDecompiledFolderPath);
+
 
             Console.WriteLine(tempDecompiledPath);
 
-            CFRZipDecompilerWrapper.Decompile(zipPath, tempDecompiledPath);
+            CFRZipDecompilerWrapper.Decompile(zipPath, tempDecompiledPath, decompilerPath);
 
             using var javaZipSourceCodeExtractor = new JavaZipSourceCodeExtractor(tempDecompiledPath);
 

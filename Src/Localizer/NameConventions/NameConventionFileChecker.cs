@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Localizer.NameConventions
+﻿namespace Localizer.NameConventions
 {
     public class NameConventionFileChecker
     {
@@ -28,13 +22,13 @@ namespace Localizer.NameConventions
 
                 targetFilePath = translationFilePath.Replace(TranslationFolderPath, null);
                 //targetFilePath = targetFilePath.Replace(convention.DeletePattern, string.Empty);
-                targetFilePath = Path.Combine(TargetFolerPath, targetFilePath);
+                targetFilePath = Path.Combine(TargetFolerPath, targetFilePath.Trim('\\', '/'));
             }
             else
             {
                 targetFilePath = translationFilePath.Replace(TranslationFolderPath, null);
                 targetFilePath = targetFilePath.Replace(convention.DeletePattern, string.Empty);
-                targetFilePath = Path.Combine(TargetFolerPath, targetFilePath);
+                targetFilePath = Path.Combine(TargetFolerPath, targetFilePath.Trim('\\','/'));
             }
 
             if (File.Exists(targetFilePath))

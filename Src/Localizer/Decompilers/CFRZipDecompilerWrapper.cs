@@ -9,12 +9,12 @@ namespace Localizer.Decompilers
 {
     public class CFRZipDecompilerWrapper
     {
-        public static void Decompile(string jarFileAbsolutePath, string decompiledZipPath)
+        public static void Decompile(string jarFileAbsolutePath, string decompiledZipPath, string decompilerAbsolutePath)
         {
             Process process = new Process();
             // Configure the process using the StartInfo properties.
             process.StartInfo.FileName = "java";
-            string decompilerAbsolutePath = Path.GetFullPath("Decompilers/CFRZip-0.152.jar");
+            //string decompilerAbsolutePath = Path.Combine(localFolderPath, "Decompilers\\CFRZip-0.152.jar");
             process.StartInfo.Arguments = $"-jar \"{decompilerAbsolutePath}\" \"{jarFileAbsolutePath}\" --outputzip \"{decompiledZipPath}\" --silent true --renameillegalidents true";
             process.StartInfo.WindowStyle = ProcessWindowStyle.Maximized;
             process.Start();
