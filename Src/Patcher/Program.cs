@@ -39,7 +39,7 @@ namespace Patcher
                     if (!processJar)
                         continue;
 
-                    int translated = JarGeneralLocalizer.Localize(targetFilePath, JsonToTranslationDictionary.Parse(translationFilePath));
+                    int translated = JarGeneralLocalizer.Localize(targetFilePath, JsonToTranslationDictionary.Parse(translationFilePath), Path.GetFullPath("Decompilers\\CFRZip-0.152.jar"));
                     Console.WriteLine($"[{translated}] \"{targetFilePath}\"");
                 }
                 else if (convention == TranslationFilesNameConventions.CsvTranslation)
