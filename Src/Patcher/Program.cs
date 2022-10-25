@@ -44,7 +44,7 @@ namespace Patcher
                 }
                 else if (convention == TranslationFilesNameConventions.CsvTranslation)
                 {
-                    int translated = CsvGeneralLocalizer.Localize(targetFilePath, JsonToCsvDictionary.Parse(translationFilePath));
+                    int translated = CsvGeneralLocalizer.Localize(targetFilePath, JsonToCsvTranslationDictionary.Parse(translationFilePath));
                     Console.WriteLine($"[{translated}] \"{targetFilePath}\"");
                 }
                 else if (convention == TranslationFilesNameConventions.TxtTranslation)
