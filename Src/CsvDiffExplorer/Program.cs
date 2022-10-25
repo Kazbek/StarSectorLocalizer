@@ -15,7 +15,8 @@ namespace CsvDiffExplorer
     {
         static void Main(string[] args)
         {
-            FileSpecifics.data.strings.descriptions.Process();
+            //FileSpecifics.data.strings.descriptions.Process();
+            FileSpecifics.data.campaign.rules.Process();
         }
     }
 }
