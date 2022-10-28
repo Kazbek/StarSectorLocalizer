@@ -54,7 +54,7 @@ public partial class FromFileTranslationView : ContentView
 
         try
         {
-            patcher.Patch(gamePath, translationPath, true);
+            patcher.Patch(gamePath, translationPath, ProcessJarCheckBox.IsChecked);
         }catch(Exception e)
         {
             WriteLog(e.ToString());

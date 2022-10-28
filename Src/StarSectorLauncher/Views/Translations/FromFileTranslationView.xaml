@@ -18,6 +18,15 @@
         <Entry x:Name="LocalizationPathEntry"
                Margin="0,10"
                Placeholder="Путь до папки с игрой..." />
+
+        <HorizontalStackLayout>
+            <CheckBox
+                IsChecked="True"
+                x:Name="ProcessJarCheckBox"/>
+            <Label
+                VerticalOptions="Center"
+                Text="Локализовать jar файлы (занимает больше времени)"/>
+        </HorizontalStackLayout>
         <Button Text="Запустить перевод"
                 HorizontalOptions="Start"
                 Clicked="OnStartTranslateButtonClicked" />
