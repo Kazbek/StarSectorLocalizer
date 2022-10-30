@@ -21,7 +21,6 @@
 
         <HorizontalStackLayout>
             <CheckBox
-                IsChecked="True"
                 x:Name="ProcessJarCheckBox"/>
             <Label
                 VerticalOptions="Center"
