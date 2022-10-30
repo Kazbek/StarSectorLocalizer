@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using System.Web;
 
 namespace Localizer.Data
 {
@@ -32,7 +33,7 @@ namespace Localizer.Data
                 {
                     if (CountSubstring(pair.Key, sc) != CountSubstring(pair.Value, sc))
                     {
-                        message = $"[SC NOT MATCH][{CountSubstring(pair.Key, sc)}][{CountSubstring(pair.Value, sc)}] \"{pair.Key}\" - \"{pair.Value}\"";
+                        message = $"[SC NOT MATCH][{HttpUtility.JavaScriptStringEncode(sc)}][{CountSubstring(pair.Key, sc)}][{CountSubstring(pair.Value, sc)}]\n=======\n{pair.Key}\n=======\n{pair.Value}\n=======\n";
                         Console.WriteLine(message);
                         return false;
                     }
@@ -57,6 +58,7 @@ namespace Localizer.Data
         {
             "\t",
             "\n",
+            "\r",
         };
     }
 }
