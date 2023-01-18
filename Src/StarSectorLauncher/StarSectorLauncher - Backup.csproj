@@ -46,25 +46,21 @@
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-maccatalyst|AnyCPU'">
 	  <ApplicationId>com.kazbek.starsectorlauncher</ApplicationId>
 	  <ApplicationDisplayVersion>1.1</ApplicationDisplayVersion>
-	  <ApplicationVersion>2</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-maccatalyst|AnyCPU'">
 	  <ApplicationId>com.kazbek.starsectorlauncher</ApplicationId>
 	  <ApplicationDisplayVersion>1.1</ApplicationDisplayVersion>
-	  <ApplicationVersion>2</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net7.0-windows10.0.19041.0|AnyCPU'">
 	  <ApplicationId>com.kazbek.starsectorlauncher</ApplicationId>
 	  <ApplicationDisplayVersion>1.1</ApplicationDisplayVersion>
-	  <ApplicationVersion>2</ApplicationVersion>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net7.0-windows10.0.19041.0|AnyCPU'">
 	  <ApplicationId>com.kazbek.starsectorlauncher</ApplicationId>
 	  <ApplicationDisplayVersion>1.1</ApplicationDisplayVersion>
-	  <ApplicationVersion>2</ApplicationVersion>
 	</PropertyGroup>
 
 	<ItemGroup>
