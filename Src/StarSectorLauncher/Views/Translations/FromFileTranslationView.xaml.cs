@@ -28,13 +28,17 @@ public partial class FromFileTranslationView : ContentView
         ClearLog();
         await Permissions.RequestAsync<Permissions.StorageWrite>();
         await Permissions.RequestAsync<Permissions.StorageRead>();
-        string decompilerPath = Path.Combine(FileSystem.Current.AppDataDirectory, "CFRZip-0.152.jar");
+
+        //var path = Directory.GetCurrentDirectory();
+
+        string decompilerPath = Path.Combine(Directory.GetCurrentDirectory(), "Decompilers\\CFRZip-0.152.jar");
+        /*string decompilerPath = Path.Combine(FileSystem.Current.AppDataDirectory, "CFRZip-0.152.jar");
         using (var fileStream = File.Create(decompilerPath))
         {
             var stream = await FileSystem.Current.OpenAppPackageFileAsync("Decompilers\\CFRZip-0.152.jar");
             //myOtherObject.InputStream.Seek(0, SeekOrigin.Begin);
             stream.CopyTo(fileStream);
-        }
+        }*/
 
         string gamePath = GamePathEntry.Text.Trim(_trims);
         WriteLog($"Game path: {gamePath}");
