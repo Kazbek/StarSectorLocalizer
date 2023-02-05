@@ -13,13 +13,13 @@ namespace Localizer.Data
             if (!includeNonTranslated)
                 dict.DeleteNotTranslated();
 
-            if (!Validate(dict))
-                throw new Exception("Probablycorrupted translation!");
+            if (!Validate(dict, out string message))
+                throw new Exception($"Probablycorrupted translation!{message}");
 
             return dict;
         }
 
-        public static bool Validate(Dictionary<string, string> translation)
+        public static bool Validate(Dictionary<string, string> translation, out string message)
         {
             foreach(var pair in translation.Where(t => t.Value != null))
             {
@@ -27,12 +27,13 @@ namespace Localizer.Data
                 {
                     if(CountSubstring(pair.Key, sc) != CountSubstring(pair.Value, sc))
                     {
-                        Console.WriteLine($"[SC NOT MATCH][{CountSubstring(pair.Key, sc)}][{CountSubstring(pair.Value, sc)}] \"{pair.Key}\" - \"{pair.Value}\"");
+                        message = $"[SC NOT MATCH][{CountSubstring(pair.Key, sc)}][{CountSubstring(pair.Value, sc)}] \"{pair.Key}\" - \"{pair.Value}\"";
+                        Console.WriteLine(message);
                         return false;
                     }
                 }
             }
-
+            message = null;
             return true;
         }
 
