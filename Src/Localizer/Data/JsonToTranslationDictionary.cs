@@ -23,7 +23,14 @@ namespace Localizer.Data
         {
             foreach(var pair in translation.Where(t => t.Value != null))
             {
-                foreach(var sc in ServiceCommands)
+                if (pair.Key == pair.Value)
+                {
+                    message = $"[Translation same as original]\n=======\n[{pair.Key}]\n=======\n";
+                    Console.WriteLine(message);
+                    return false;
+                }
+
+                foreach (var sc in ServiceCommands)
                 {
                     if(CountSubstring(pair.Key, sc) != CountSubstring(pair.Value, sc))
                     {
