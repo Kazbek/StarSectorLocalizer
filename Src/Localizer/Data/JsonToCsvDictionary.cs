@@ -19,8 +19,11 @@ namespace Localizer.Data
             if (!includeNonTranslated)
                 dict.DeleteNotTranslated();
 
+            if(dict.Translations.Any(p => dict.Translations.ContainsKey(p.Value)))
+                throw new Exception("Looped translation!" + string.Join(", ",dict.Translations.Where(p => dict.Translations.ContainsKey(p.Value)).Select(t => $"[{t.Key}]=[{t.Value}]")));
+
             if (!Validate(dict.Translations, out string message))
-                throw new Exception("Probablycorrupted translation!" + message);
+                throw new Exception("Probably corrupted translation!" + message);
 
             return dict;
         }

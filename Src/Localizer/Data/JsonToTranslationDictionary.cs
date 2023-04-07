@@ -13,6 +13,9 @@ namespace Localizer.Data
             if (!includeNonTranslated)
                 dict.DeleteNotTranslated();
 
+            if (dict.Any(p => dict.ContainsKey(p.Value)))
+                throw new Exception("Looped translation!" + string.Join(", ", dict.Where(p => dict.ContainsKey(p.Value)).Select(t => $"[{t.Key}]=[{t.Value}]")));
+
             if (!Validate(dict, out string message))
                 throw new Exception($"Probablycorrupted translation!{message}");
 
