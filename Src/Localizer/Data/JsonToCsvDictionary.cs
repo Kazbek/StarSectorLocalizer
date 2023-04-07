@@ -20,10 +20,10 @@ namespace Localizer.Data
                 dict.DeleteNotTranslated();
 
             if(dict.Translations.Any(p => dict.Translations.ContainsKey(p.Value)))
-                throw new Exception("Looped translation!" + string.Join(", ",dict.Translations.Where(p => dict.Translations.ContainsKey(p.Value)).Select(t => $"[{t.Key}]=[{t.Value}]")));
+                throw new Exception($"{path}\nLooped translation!" + string.Join(", ",dict.Translations.Where(p => dict.Translations.ContainsKey(p.Value)).Select(t => $"[{t.Key}]=[{t.Value}]")));;
 
             if (!Validate(dict.Translations, out string message))
-                throw new Exception("Probably corrupted translation!" + message);
+                throw new Exception($"{path}\nProbably corrupted translation!" + message);
 
             return dict;
         }
