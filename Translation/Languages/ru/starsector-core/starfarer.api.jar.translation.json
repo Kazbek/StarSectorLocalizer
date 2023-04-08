@@ -3445,7 +3445,7 @@
   "Your fleet's speed is reduced by %s.": null,
   "Hyperspace storms": null,
   "Being caught in a storm causes storm strikes to damage ships and reduce their combat readiness. Larger fleets attract more damaging strikes.": null,
-  "In addition, storm strikes toss the fleet's drive bubble about with great violence, often causing a loss of control. Some commanders are known to use these to gain additional speed, and to save fuel - a practice known as \"storm riding\".": null,
+  "In addition, storm strikes toss the fleet's drive bubble about with great violence, often causing a loss of control. Some commanders are known to use these to gain additional speed, and to save fuel - a practice known as \"storm riding\".": "Кроме того, штормовые удары с большой силой толкают двигатель флота, что часто приводит к потере контроля. Известно, что некоторые командиры используют их для увеличения скорости и экономии топлива — практика, известная как \"Штормовая езда\".",
   "\"Slow-moving\" fleets do not attract storm strikes.": null,
   "No combat effects.": null,
   "*1 light-year = 2000 units = 1 map grid cell": null,
