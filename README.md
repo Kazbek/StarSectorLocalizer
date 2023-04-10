@@ -41,4 +41,4 @@
 Локализованные шрифты находятся в [этой папке](/Translation/Languages/ru/starsector-core/graphics/fonts).
 
 ## Пользовательские переводы модов
-1. Перевод от [WhitePulsar](https://github.com/WhitePulsar/StarSectorLocalizer-Machine-Translate/tree/mods)
+1. Перевод от [WhitePulsar](https://github.com/WhitePulsar/StarSectorLocalizer-Machine-MODS)
