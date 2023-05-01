@@ -25,7 +25,18 @@
             <Label
                 VerticalOptions="Center"
                 Text="Локализовать jar файлы (занимает больше времени)"/>
+            <CheckBox
+                Margin="20,0,0,0"
+                x:Name="CreatePatchFileCheckBox"/>
+            <Label
+                VerticalOptions="Center"
+                Text="Создать папку с патчем"/>
         </HorizontalStackLayout>
+        <Label Margin="0,10"                   
+                Text="Путь до папки хранения патчей (будет создана новая подпапка):"/>
+        <Entry x:Name="PatchPathEntry"
+               Margin="0,10"
+               Placeholder="Путь до папки хранения патчей..." />
         <Button Text="Запустить перевод"
                 HorizontalOptions="Start"
                 Clicked="OnStartTranslateButtonClicked" />

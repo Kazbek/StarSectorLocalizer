@@ -38,7 +38,7 @@ namespace Localizer.Localizers
                 }
             }
 
-            for(int i = 1; i < dataTable.Rows.Count; i++)
+            for(int i = 0; i < dataTable.Rows.Count; i++)
             {
                 foreach(var j in cols)
                 {
