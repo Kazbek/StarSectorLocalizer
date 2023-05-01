@@ -10,8 +10,10 @@ public partial class FromFileTranslationView : ContentView
 		InitializeComponent();
 
         GamePathEntry.Text = Preferences.Default.Get("GAME_PATH", string.Empty);
-        LocalizationPathEntry.Text =  Preferences.Default.Get("LOCALIZATION_PATH", string.Empty);
-        ProcessJarCheckBox.IsChecked =  Preferences.Default.Get("PROCESS_JAR", true);
+        LocalizationPathEntry.Text = Preferences.Default.Get("LOCALIZATION_PATH", string.Empty);
+        PatchPathEntry.Text = Preferences.Default.Get("PATCH_PATH", string.Empty);
+        ProcessJarCheckBox.IsChecked = Preferences.Default.Get("PROCESS_JAR", true);
+        ProcessJarCheckBox.IsChecked = Preferences.Default.Get("CREATE_PATCH", false);
 	}
 
     void WriteLog(string text)
@@ -60,16 +62,28 @@ public partial class FromFileTranslationView : ContentView
 
         Preferences.Default.Set("LOCALIZATION_PATH", translationPath);
 
+        if(!CreatePatchFileCheckBox.IsChecked || string.IsNullOrWhiteSpace(PatchPathEntry.Text))
+        {
+            CreatePatchFileCheckBox.IsChecked = false;
+        }
+
+        PatchPathEntry.Text = PatchPathEntry.Text.Trim();
+        Preferences.Default.Set("PATCH_PATH", PatchPathEntry.Text);
+        Preferences.Default.Set("CREATE_PATCH", CreatePatchFileCheckBox.IsChecked);
+
         FilesPatcher patcher = new FilesPatcher
         {
             ProgressLogger = new Progress<string>(WriteLog),
             DecompilerPath = decompilerPath
         };
 
+        string patchPath = CreatePatchFileCheckBox.IsChecked ? Path.Combine(PatchPathEntry.Text, $"{DateTime.Now:yyyy-MM-dd_HH-mm-ss}{(ProcessJarCheckBox.IsChecked ? "_jar" : string.Empty)}") : null;
+
         try
         {
-            patcher.Patch(gamePath, translationPath, ProcessJarCheckBox.IsChecked);
-        }catch(Exception e)
+            patcher.Patch(gamePath, translationPath, ProcessJarCheckBox.IsChecked, patchPath);
+        }
+        catch(Exception e)
         {
             WriteLog(e.ToString());
         }
