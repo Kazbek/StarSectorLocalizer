@@ -9,7 +9,7 @@
     "assembly": {
       "Common.dll": "sha256-khrxcer8GtPkG+ph25DBnJmgBQT\/d4F4NLUFjpmQ\/\/U=",
       "CsvHelper.dll": "sha256-oh395MqwHOdv87ggl0L2cpWEDZZGFYe3CVUXnzSo8rY=",
-      "Microsoft.AspNetCore.Components.dll": "sha256-UibxllanMex2tZuoJJRql9csAKBE3R53gjQ5Kv2o\/ag=",
+      "Microsoft.AspNetCore.Components.dll": "sha256-RbCBVZzw0nhRei6ccnp8QRG8SkByFGtrJ\/0C3A0oW98=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-3UiIc2Xw0leV5bCs96PWBN9JYz\/iKJ1VXLkPovopgjs=",
       "Microsoft.AspNetCore.Components.WebAssembly.dll": "sha256-oygySbB3+99iXB1OXUb\/q0aFO1QmqdgelCy\/ckWlbxE=",
       "Microsoft.CSharp.dll": "sha256-MFnVqKPgfQ66KZUHlSBz3AkR\/as9+NRSnh\/1roVq8lg=",
@@ -24,7 +24,7 @@
       "Microsoft.Extensions.Primitives.dll": "sha256-eXvGx2jcjpTPEJoAHBsW\/VuMPbNyyU+AsuhPmkzSSRY=",
       "Microsoft.JSInterop.dll": "sha256-1DMowbEcl7W+S7iIROG4fHaFWKjIMc3y26uOYaWueDc=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-Awf7wv9O8IMhKfPgck20vnr8m17qkGi5wsUfHhliPCQ=",
-      "StarSectorWebTools.dll": "sha256-S2pWd9Q7N+zfzIFVQZE05of6Ou0MTH3tEnyfgTKRL\/c=",
+      "StarSectorWebTools.dll": "sha256-jcBseKmYOsFF3PgSkLXFrdys+5rm2s5u+vusKxwPyJs=",
       "System.Collections.Concurrent.dll": "sha256-IVO2NrxC4mmmm4cMEwsj8rHMH8qGKQYHUxwnXaF4uaY=",
       "System.Collections.dll": "sha256-4RbA8dO1Kdj9VM398YmIPtSYaj2alAC+bTWgAX4zfEs=",
       "System.Collections.NonGeneric.dll": "sha256-1mxz5AtxTSG5UatSKz+EC13KIekFci8vbmi73tLRWOo=",
