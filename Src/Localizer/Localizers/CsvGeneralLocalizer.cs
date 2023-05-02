@@ -1,4 +1,5 @@
-﻿using Localizer.Dictionaries;
+﻿using Common.Utils;
+using Localizer.Dictionaries;
 using Localizer.Utils.Json;
 using System;
 using System.Collections.Generic;

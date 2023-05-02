@@ -1,0 +1,73 @@
+﻿@page "/csv-from-old-to-new"
+
+<PageTitle>StarSector Web Tools by Kazbek</PageTitle>
+
+<div class="mb-3">
+    <div>Данный инструмент предназначен, чтобы достать перевод из переведенного файла от старой версии игры (файл 1) и оригинального файла старой версии игры (файл 2) и создания переведенного словаря для непереведенного файла новой версии игры (файл 3).</div>
+    <div>Например, в 1 файл: переведенный csv от версии 0.91, в 2 файл: непереведенный (оригинальный) файл csv от версии 0.91, в 3 файл: непереведенный (оригинальный) файл csv от версии 0.95a</div>
+</div>
+<div class="mb-3">
+    <div class="mb-3">
+        <label for="titleInput" class="form-label">Переведенный csv старой версии</label>
+        <InputFile OnChange="SetOldTranslatedFile" class="form-control" accept=".csv" />
+    </div>
+    <div class="mb-3">
+        <label for="titleInput" class="form-label">Оригинальный csv старой версии</label>
+        <InputFile OnChange="SetOldOriginalFile" class="form-control" accept=".csv" />
+    </div>
+    <div class="mb-3">
+        <label for="titleInput" class="form-label">Оригинальный csv новой версии (для создания словаря)</label>
+        <InputFile OnChange="SetNewOriginalFile" class="form-control" accept=".csv" />
+    </div>
+    @if (IsReadyToPrepare)
+    {
+        <div>
+            <button class="btn btn-primary" type="button" @onclick="PreProcessFilesAsync">Предпросмотр</button>
+        </div>
+    }
+    @if(PreProcessErrors.Count > 0)
+    {
+        <div class="mb-3">
+            <div>Возникли следующие проблемы:</div>
+            @foreach(var e in PreProcessErrors)
+            {
+                <div>@e</div>
+            }
+        </div>
+    }
+</div>
+@if(IsReadyToProcess){
+    <div>
+        <div class="mb-3">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Столбец</th>
+                        <th scope="col">Выбранное действие</th>
+                        <th scope="col">Выбрать ключом</th>
+                        <th scope="col">Выбрать для перевода</th>
+                        <th scope="col">Игнорировать</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(var col in ColumnsSelect.Columns)
+                    {
+                        <tr>
+                            <th scope="row">@col.Name</th>
+                            <td>@col.GetFriendlyType()</td>
+                            <td><button class="btn btn-primary" type="button" @onclick="() => col.ColumnType = ViewModels.ColumnType.Key">Сделать ключом</button></td>
+                            <td><button class="btn btn-primary" type="button" @onclick="() => col.ColumnType = ViewModels.ColumnType.ToTranslate">Для перевода</button></td>
+                            <td><button class="btn btn-primary" type="button" @onclick="() => col.ColumnType = ViewModels.ColumnType.Key">Игнорировать</button></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+        <div class="mb-3">
+            <button class="btn btn-primary" type="button" @onclick="SaveAsync">Создать словарь</button>
+        </div>
+        <div class="mb-3">
+            @ResultString
+        </div>
+    </div>
+}

@@ -1,8 +1,6 @@
-﻿using System.Text.Encodings.Web;
-using System.Text.Json;
-using System.Text.Unicode;
+﻿using System.Text.Json;
 
-namespace Localizer.Utils.Json
+namespace Common.Utils
 {
     public static class JsonUtil
     {
