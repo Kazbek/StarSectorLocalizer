@@ -1,0 +1,30 @@
+{
+  "TranslatedColumns": [
+    "name",
+    "desc"
+  ],
+  "Translations": {
+    "Transponder": "Транспондер",
+    "Broadcast your identity; required for legal trade.": "Передача ваших данных; требуется для легальной торговли.",
+    "Go Dark": "Спрятаться в тени",
+    "Reduce sensor profile at the cost of burn level.": "Уменьшает радиус обнаружения флота за счет уменьшения скорости полета.",
+    "Active Sensor Burst": "Включить усиление сенсоров",
+    "Stop and increase detection range, fleet is more detectable.": "Остановитесь и увеличьте дальность сенсоров, флот легче обнаружить.",
+    "Emergency Burn": "Экстренное ускорение",
+    "Briefly boost burn level at the cost of fuel and combat readiness.": "Ненадолго повысить скорость полета за счет большего сжигания топлива и уменьшения боевого духа команды.",
+    "Sustained Burn": "Постоянное ускорение",
+    "Boost burn level at the cost of acceleration and wind-up time.": "После остановки увеличивается скорость полета.",
+    "Interdiction Pulse": "Импульсный подавитель",
+    "Slow down another fleet heading towards the source of the pulse.": "Замедляйте другой флот, направляясь к источнику сигнала.",
+    "Scavenge": "Сбор обломков",
+    "Pick through a debris field for anything of value.": "Искать ценные вещи в обломках кораблей.",
+    "Neutrino Detector": "Сканирование системы",
+    "Detect in-system entities at very long range; unreliable with false readings.": "Поиск объектов внутри системы на очень большом растоянии; возможны ложные сигналы.",
+    "Transverse Jump": "Трансферсеонный прыжок",
+    "Jump into a system through a nascent gravity well, or directly into hyperspace.": "Прыгните в систему через зарождающийся гравитационный колодец или прямо в гиперпространство.",
+    "Remote Survey": "Дистанционное исследование",
+    "Do a preliminary survey on all nearby planets remotely.": "Провести сканирование ближайших планет.",
+    "Distress Call": "Сигнал бедствия",
+    "Issue a distress call.": "Подать сигнал бедствия."
+  }
+}

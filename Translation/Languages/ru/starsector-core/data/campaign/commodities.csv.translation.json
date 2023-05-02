@@ -1,0 +1,41 @@
+{
+  "TranslatedColumns": [
+    "name",
+    "desc"
+  ],
+  "Translations": {
+    "Supplies": "Припасы",
+    "Fuel": "Топливо",
+    "Crew": "Экипаж",
+    "Marines": "Пехотинцы",
+    "Food": "Еда",
+    "Organics": "Органика",
+    "Volatiles": "Летучие вещества",
+    "Ore": "Руда",
+    "Transplutonic Ore": "Трансплутоническая руда",
+    "Metals": "Металлы",
+    "Transplutonics": "Трансплутоники",
+    "Heavy Machinery": "Тяжелая техника",
+    "Domestic Goods": "Бытовые товары",
+    "Harvested Organs": "Извлеченные органы",
+    "Recreational Drugs": "Легкие наркотики",
+    "Heavy Armaments": "Тяжелое вооружение",
+    "Luxury Goods": "Предметы роскоши",
+    "Volturnian Lobster": "Вольтурнский лобстер",
+    "Ship Hulls & Weapons": "Корпуса кораблей и оружие",
+    "AI Cores": "Ядро ИИ",
+    "Alpha Core": "Альфа ядро",
+    "Beta Core": "Бетта ядро",
+    "Gamma Core": "Гамма ядро",
+    "Omega Core": "Омега ядро",
+    "Survey Data": "Исследовательские данные",
+    "Class I Survey Data": "Данные исследования I класса",
+    "Class II Survey Data": "Данные исследования II класса",
+    "Class III Survey Data": "Данные исследования III класса",
+    "Class IV Survey Data": "Данные исследования IV класса",
+    "Class V Survey Data": "Данные исследования V класса",
+    "Blueprints": "Чертежи",
+    "Ship Equipment": "Корабельное оборудование",
+    "Credits": "Кредиты"
+  }
+}
