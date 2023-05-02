@@ -9,3 +9,5 @@
     anchorElement.remove();
     URL.revokeObjectURL(url);
 }
+
+function ExecuteJsContainer(scriptContainerId) { eval(document.getElementById(scriptContainerId).text); }

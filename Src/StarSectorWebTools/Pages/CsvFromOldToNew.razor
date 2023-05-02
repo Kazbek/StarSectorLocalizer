@@ -4,7 +4,21 @@
 
 <div class="mb-3">
     <div>Данный инструмент предназначен, чтобы достать перевод из переведенного файла от старой версии игры (файл 1) и оригинального файла старой версии игры (файл 2) и создания переведенного словаря для непереведенного файла новой версии игры (файл 3).</div>
-    <div>Например, в 1 файл: переведенный csv от версии 0.91, в 2 файл: непереведенный (оригинальный) файл csv от версии 0.91, в 3 файл: непереведенный (оригинальный) файл csv от версии 0.95a</div>
+</div>
+<div class="alert alert-secondary mb-3">
+    <span class="oi oi-pencil me-2" aria-hidden="true"></span>
+    <strong>Для создания чистого словаря</strong>
+    необходимо во все 3 строки указать один файл.
+</div>
+<div class="alert alert-secondary mb-3">
+    <span class="oi oi-pencil me-2" aria-hidden="true"></span>
+    <strong>Для создание переведённого словаря</strong>
+    необходимо в первую указать переведённый, а в 2 и 3 оригинальный.
+</div>
+<div class="alert alert-secondary mb-3">
+    <span class="oi oi-pencil me-2" aria-hidden="true"></span>
+    <strong>Для обновления версии перевода</strong>
+    необходимо в 1 старый переведённый, в 2 старый оригинал, в 3 оригинал новой версии.
 </div>
 <div class="mb-3">
     <div class="mb-3">
@@ -57,7 +71,7 @@
                             <td>@col.GetFriendlyType()</td>
                             <td><button class="btn btn-primary" type="button" @onclick="() => col.ColumnType = ViewModels.ColumnType.Key">Сделать ключом</button></td>
                             <td><button class="btn btn-primary" type="button" @onclick="() => col.ColumnType = ViewModels.ColumnType.ToTranslate">Для перевода</button></td>
-                            <td><button class="btn btn-primary" type="button" @onclick="() => col.ColumnType = ViewModels.ColumnType.Key">Игнорировать</button></td>
+                            <td><button class="btn btn-primary" type="button" @onclick="() => col.ColumnType = ViewModels.ColumnType.Ignore">Игнорировать</button></td>
                         </tr>
                     }
                 </tbody>

@@ -20,15 +20,30 @@
             </NavLink>
         </div>
     </nav>
+    <div>
+        <!-- Yandex.RTB R-A-1214868-1 -->
+        <div id="yandex_rtb_R-A-1214868-1"></div>
+        @markupString
+    </div>
 </div>
 
 @code {
+    [Inject] protected IJSRuntime JsRuntime { get; set; }
+
     private bool collapseNavMenu = true;
 
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
 
     private void ToggleNavMenu()
     {
         collapseNavMenu = !collapseNavMenu;
+    }
+
+    private MarkupString markupString = new MarkupString("<script id=\"yandex-ad-container\" type=\"text/javascript\">window.yaContextCb.push(()=>{ Ya.Context.AdvManager.render({ renderTo: 'yandex_rtb_R-A-1214868-1', blockId: 'R-A-1214868-1' })})</script>");
+
+    protected override async Task OnAfterRenderAsync(bool first)
+    {
+        if(first)
+            await JsRuntime.InvokeVoidAsync("ExecuteJsContainer", "yandex-ad-container");
     }
 }
