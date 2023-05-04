@@ -1,4 +1,5 @@
-﻿using Localizer.DataExtractors;
+﻿using Common.Utils;
+using Localizer.DataExtractors;
 using Localizer.Utils.Json;
 using System.Collections.Specialized;
 using System.IO.Compression;
@@ -110,7 +111,7 @@ namespace JarDiffExplorer
                 }
             }
             Directory.CreateDirectory(Path.GetDirectoryName(templatePath));
-            File.WriteAllText(templatePath,JsonUtil.Serialize(od));
+            File.WriteAllText(templatePath, JsonUtil.Serialize(od));
         }
 
         private static Dictionary<string, int> FindEntries(string path)
