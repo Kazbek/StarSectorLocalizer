@@ -13,26 +13,37 @@ namespace Localizer.Data
             if (!includeNonTranslated)
                 dict.DeleteNotTranslated();
 
-            if (!Validate(dict))
-                throw new Exception("Probablycorrupted translation!");
+            if (dict.Any(p => dict.ContainsKey(p.Value)))
+                throw new Exception($"{path}\nLooped translation!" + string.Join(", ", dict.Where(p => dict.ContainsKey(p.Value)).Select(t => $"[{t.Key}]=[{t.Value}]")));
+
+            if (!Validate(dict, out string message))
+                throw new Exception($"{path}\nProbably corrupted translation!{message}");
 
             return dict;
         }
 
-        public static bool Validate(Dictionary<string, string> translation)
+        public static bool Validate(Dictionary<string, string> translation, out string message)
         {
             foreach(var pair in translation.Where(t => t.Value != null))
             {
-                foreach(var sc in ServiceCommands)
+                if (pair.Key == pair.Value)
+                {
+                    message = $"[Translation same as original]\n=======\n[{pair.Key}]\n=======\n";
+                    Console.WriteLine(message);
+                    return false;
+                }
+
+                foreach (var sc in ServiceCommands)
                 {
                     if(CountSubstring(pair.Key, sc) != CountSubstring(pair.Value, sc))
                     {
-                        Console.WriteLine($"[SC NOT MATCH][{CountSubstring(pair.Key, sc)}][{CountSubstring(pair.Value, sc)}] \"{pair.Key}\" - \"{pair.Value}\"");
+                        message = $"[SC NOT MATCH][{CountSubstring(pair.Key, sc)}][{CountSubstring(pair.Value, sc)}] \"{pair.Key}\" - \"{pair.Value}\"";
+                        Console.WriteLine(message);
                         return false;
                     }
                 }
             }
-
+            message = null;
             return true;
         }
 

@@ -8,11 +8,14 @@ namespace Localizer.Patchers
     {
         public IProgress<string> ProgressLogger { get; set; }
         public string DecompilerPath { get; set; }
-
-        public void Patch(string gameFolder, string translationFolder, bool processJar = true)
+        // TODO: To crate patch
+        //string patchFolder = $"D:\\StarSectorPlayground\\Translation Patch\\{DateTime.Now.ToString("d")}";
+        public void Patch(string gameFolder, string translationFolder, bool processJar = true, string patchFolder = null)
         {
             //string translationFolder = @"Languages\ru\";
             //string gameFolder = @"C:\StarSectorPlayground\StarSector 0.95.1a-RC6 Game\original\Starsector\";
+
+            bool createPatch = patchFolder != null;
 
             NameConventionFileChecker conventionFileChecker = new NameConventionFileChecker(translationFolder, gameFolder);
 
@@ -65,6 +68,15 @@ namespace Localizer.Patchers
                 {
                     Console.Write($"UNMATCHED CONVENTION: {translationFilePath} - {convention.PostfixPattern}");
                     throw new ArgumentException($"UNMATCHED CONVENTION: {translationFilePath} - {convention.PostfixPattern}");
+                }
+
+                if (createPatch) //TODO: To create patch
+                {
+                    string relativePath = targetFilePath.Replace(gameFolder, string.Empty);
+                    string absolutePatchPath = patchFolder + relativePath;
+
+                    Directory.CreateDirectory(Path.GetDirectoryName(absolutePatchPath));
+                    File.Copy(targetFilePath, absolutePatchPath, true);
                 }
             }
 

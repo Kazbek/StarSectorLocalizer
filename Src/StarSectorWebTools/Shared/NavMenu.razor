@@ -1,0 +1,49 @@
+﻿<div class="top-row ps-3 navbar navbar-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="">StarSectorWebTools</a>
+        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+    </div>
+</div>
+
+<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
+    <nav class="flex-column">
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+                <span class="oi oi-home" aria-hidden="true"></span> Home
+            </NavLink>
+        </div>
+        <div class="nav-item px-3">
+            <NavLink class="nav-link" href="csv-from-old-to-new">
+                <span class="oi oi-plus" aria-hidden="true"></span> CSV Old -> New
+            </NavLink>
+        </div>
+    </nav>
+    <div>
+        <!-- Yandex.RTB R-A-1214868-1 -->
+        <div id="yandex_rtb_R-A-1214868-1"></div>
+        @markupString
+    </div>
+</div>
+
+@code {
+    [Inject] protected IJSRuntime JsRuntime { get; set; }
+
+    private bool collapseNavMenu = true;
+
+    private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+    private void ToggleNavMenu()
+    {
+        collapseNavMenu = !collapseNavMenu;
+    }
+
+    private MarkupString markupString = new MarkupString("<script id=\"yandex-ad-container\" type=\"text/javascript\">window.yaContextCb.push(()=>{ Ya.Context.AdvManager.render({ renderTo: 'yandex_rtb_R-A-1214868-1', blockId: 'R-A-1214868-1' })})</script>");
+
+    protected override async Task OnAfterRenderAsync(bool first)
+    {
+        if(first)
+            await JsRuntime.InvokeVoidAsync("ExecuteJsContainer", "yandex-ad-container");
+    }
+}

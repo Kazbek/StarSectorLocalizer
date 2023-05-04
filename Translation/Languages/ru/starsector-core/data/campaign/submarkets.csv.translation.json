@@ -1,0 +1,16 @@
+{
+  "TranslatedColumns": [
+    "name",
+    "desc"
+  ],
+  "Translations": {
+    "Open\r\nMarket": "Открытый \r\nрынок",
+    "The open market. Only legal goods may be traded here, and transactions are subject to tariffs. More goods are available when stability is high.\r\n\r\nSelling enough of a commodity will temporarily resolve a shortage.": "Здесь можно торговать только легальными товарами, а сделки облагаются комиссией. Больше товаров доступно при высокой стабильности.\r\n\r\nПродажа достаточного количества товара временно устранит дефицит.",
+    "Black\r\nMarket": "Черный\r\nрынок",
+    "The black market. Anything and everything can be bought or sold, and there are no tariffs. More goods are available when stability is low.\r\n\r\nSelling a commodity will not resolve a shortage.\r\n\r\nBlack market transactions may catch the eye of authorities, resulting in cargo scans and reduced faction standing, unless the trades are carried out with the transponder turned off.\r\n\r\nEngaging in legitimate trade as a \"cover\" also reduces the probability of attracting the attention of authorities.": "Все что угодно можно купить или продать, а комиссии нет. Больше товаров доступно при низкой стабильности.\r\n\r\nПродажа товара не решит проблему дефицита.\r\n\r\nТорговля на черном рынке может привлечь внимание властей, что приведет к сканированию груза и снижению репутации фракций, если только торги не проводятся с выключенным транспондером.\r\n\r\nЗанятие законной торговлей в качестве \"прикрытия\" также снижает вероятность привлечения внимания властей.",
+    "Storage": "Место хранения",
+    "Storage space for ships and cargo.": "Складские помещения для судов и грузов.",
+    "Trade with $theFaction military base.\r\n\r\nWeapons and other military hardware can be bought and sold here even if they're illegal on the open market. A commission and better standing with $theFaction results in higher-grade hardware being available.\r\n\r\nWill buy locally illegal goods as part of a no-questions-asked buyback program.\r\n\r\nSelling enough of a commodity will temporarily resolve a shortage.": "Торговля с $theFaction военной базой.\r\n\r\nЗдесь можно торговать оружием и другой военной техникой, даже если они незаконны на открытом рынке. Комиссия и хорошая репутация с $theFaction приводят к доступности более качественного оборудования.\r\n\r\nМожно купить местные нелегальные товары по льготным ценам.\r\n\r\nПродажа достаточного количества товара временно устранит дефицит.",
+    "Resource\r\nStockpiles": "Resource \r\nStockpiles"
+  }
+}

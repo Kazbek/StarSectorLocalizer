@@ -19,8 +19,11 @@ namespace Localizer.Data
             if (!includeNonTranslated)
                 dict.DeleteNotTranslated();
 
+            if(dict.Translations.Any(p => dict.Translations.ContainsKey(p.Value)))
+                throw new Exception($"{path}\nLooped translation!" + string.Join(", ",dict.Translations.Where(p => dict.Translations.ContainsKey(p.Value)).Select(t => $"[{t.Key}]=[{t.Value}]")));;
+
             if (!Validate(dict.Translations, out string message))
-                throw new Exception("Probablycorrupted translation!" + message);
+                throw new Exception($"{path}\nProbably corrupted translation!" + message);
 
             return dict;
         }
@@ -29,6 +32,13 @@ namespace Localizer.Data
         {
             foreach (var pair in translation.Where(t => t.Value != null))
             {
+                if(pair.Key == pair.Value)
+                {
+                    message = $"[Translation same as original]\n=======\n[{pair.Key}]\n=======\n";
+                    Console.WriteLine(message);
+                    return false;
+                }
+
                 foreach (var sc in ServiceCommands)
                 {
                     if (CountSubstring(pair.Key, sc) != CountSubstring(pair.Value, sc))
