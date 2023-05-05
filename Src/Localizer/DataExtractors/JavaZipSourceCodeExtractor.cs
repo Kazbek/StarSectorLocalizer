@@ -246,6 +246,9 @@ namespace Localizer.DataExtractors
             "putSpec",
             "getSpr",
             "writeTextFileToCommon",
+
+            //v-96a com.fs.starfarer.campaign.command.O00O
+            "income_report"
         };
 
         private static List<string> ignoredStartLines = new List<string>
