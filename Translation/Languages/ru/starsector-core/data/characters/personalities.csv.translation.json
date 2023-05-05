@@ -1,0 +1,18 @@
+{
+  "TranslatedColumns": [
+    "name",
+    "desc"
+  ],
+  "Translations": {
+    "Timid": "Пугливый",
+    "In combat, this officer will attempt to avoid direct engagements if at all possible, even if commanding a combat vessel.": "В бою этот офицер будет стараться избегать прямых боев, если это вообще возможно, даже если он командует боевым кораблем.",
+    "Cautious": "Осторожный",
+    "In combat, this officer will prefer to stay out of enemy range, only occasionally moving in if out-ranged by the enemy.": "В бою этот офицер будет предпочитать оставаться вне зоны досягаемости противника и активно атаковать, когда дальность атаки превосходит вражеский корабль.",
+    "Steady": "Уравновешенный",
+    "In combat, this officer will favor a balanced approach with tactics matching the current situation.": "В бою офицер будет выбирать правильную тактику в соответствии с текущей ситуацией.",
+    "Aggressive": "Агрессивный",
+    "In combat, this officer will prefer to engage at a range that allows the use of all of their ship's weapons, will pilot civilian ships as if they were combat ships, and will employ any fighters under their command aggressively.": "В бою этот офицер предпочтет вести бой на расстоянии, позволяющем использовать все оружие своего корабля, будет пилотировать гражданские корабли, как если бы они были боевыми кораблями, и будет агрессивно использовать любые истребители под своим командованием.",
+    "Reckless": "Безрассудный",
+    "In combat, this officer is aggressive to a fault, often disregarding the safety of their ship entirely in an effort to engage the enemy.": "В бою этот офицер агрессивен до предела, часто полностью игнорируя безопасность своего корабля в попытке вступить в бой с врагом."
+  }
+}
