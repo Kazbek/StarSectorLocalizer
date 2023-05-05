@@ -1,0 +1,16 @@
+{
+  "TranslatedColumns": [
+    "name",
+    "description"
+  ],
+  "Translations": {
+    "Combat": "Боевые",
+    "Skills that improve the combat performance of your flagship.": "Навыки, которые улучшают боевые характеристики вашего флагмана.",
+    "Leadership": "Лидерство",
+    "Skills that improve the combat performance of your fleet and officers.": "Навыки улучшают боевые характеристики вашего флота и других военных объектов, находящихся под вашим командованием.",
+    "Technology": "Технологии",
+    "A mix of skills that benefit exploration, stealth, and certain aspects your fleet and officers' combat performance.": "Навыки, которые улучшают характеристики вашего флота в бою и вне его.",
+    "Industry": "Индустрия",
+    "Skills that improve the efficiency and resilience of your fleet, and make it easier to recover from losses.": "Навыки, которые улучшают добычу, колонизацию и общую устойчивость вашего флота в бою и вне его."
+  }
+}
