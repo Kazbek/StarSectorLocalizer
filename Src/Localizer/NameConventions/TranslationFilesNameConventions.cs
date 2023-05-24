@@ -12,7 +12,7 @@
 
         public static readonly TranslationNameConvention ReplaceFileConvention = new();
 
-        public static readonly IReadOnlyList<TranslationNameConvention> TranslationTypes = new List<TranslationNameConvention> { JarTranslation, CsvTranslation, TxtTranslation, JsonTranslation };
+        public static readonly IReadOnlyList<TranslationNameConvention> TranslationTypes = new List<TranslationNameConvention> { JarTranslation, CsvTranslation, TxtTranslation, JavaTranslation, JsonTranslation };
     }
 
     public class TranslationNameConvention
