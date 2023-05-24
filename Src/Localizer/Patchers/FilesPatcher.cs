@@ -48,10 +48,11 @@ namespace Localizer.Patchers
                     int translated = CsvGeneralLocalizer.Localize(targetFilePath, JsonToCsvTranslationDictionary.Parse(translationFilePath));
                     ProgressLogger.Report($"[{translated}] \"{targetFilePath}\"");
                 }
-                else if (convention == TranslationFilesNameConventions.TxtTranslation)
+                else if (convention == TranslationFilesNameConventions.TxtTranslation
+                      || convention == TranslationFilesNameConventions.JavaTranslation)
                 {
                     bool translated = TxtGeneralLocalizer.Localize(targetFilePath, translationFilePath);
-                    ProgressLogger.Report($"[TXT][{translated}] \"{targetFilePath}\"");
+                    ProgressLogger.Report($"[TXT/JAVA][{translated}] \"{targetFilePath}\"");
                 }
                 else if (convention == TranslationFilesNameConventions.JsonTranslation)
                 {
