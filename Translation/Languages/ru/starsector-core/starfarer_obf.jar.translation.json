@@ -2004,7 +2004,7 @@
   "Maximum number of built-in hullmods reached": null,
   "No ": null,
   " points available": null,
-  "Используйте ": null,
+  "Use ": "Используйте ",
   " points to build hullmods into the ship, reducing ": " points чтобы встроить модификации корпуса в корабль, снижающих ",
   "their ordnance point cost to zero and making them unremovable.": "стоимость их размещения в очках оснащения до нуля.",
   "This ship already has the maximum of %s built-in hullmods.": "Для этого корабля уже достигнуто максимальное число (%s) встраиваемых модификаций.",
