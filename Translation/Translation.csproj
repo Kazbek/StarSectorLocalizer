@@ -12,11 +12,4 @@
     </Content>
   </ItemGroup>
 
-
-  <ItemGroup>
-    <Content Update="Languages\ru\starsector-core\data\missions\afistfulofcredits\descriptor.json.translation.json">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-
 </Project>
