@@ -1,0 +1,131 @@
+{
+	"ranks":{
+		"factionLeader":{"name":"Верховный Главнокомандующий"},
+	
+		"spaceSailor":{"name":"Рядовой"},
+		"spaceChief":{"name":"Сержант"},
+		"spaceEnsign":{"name":"Прапорщик"},
+		"spaceLieutenant":{"name":"Лейтенант"},
+		"spaceCommander":{"name":"Командующий"},
+		"spaceCaptain":{"name":"Капитан"},
+		"spaceAdmiral":{"name":"Адмирал"},
+		"spaceMarshal":{"name":"Маршал"},
+		
+		"groundPrivate":{"name":"Рядовой"},
+		"groundSergeant":{"name":"Сержант"},
+		"groundLieutenant":{"name":"Лейтенант"},
+		"groundCaptain":{"name":"Капитан"},
+		"groundMajor":{"name":"Майор"},
+		"groundColonel":{"name":"Полковник"},
+		"groundGeneral":{"name":"Генерал"},
+		
+		"knightCaptain":{"name":"Рыцарь-капитан"},
+		
+		"chiefHighInspector":{"name":"Главный старший инспектор"},
+		"deputyStarMarshal":{"name":"Заместитель звездного маршала"},
+		"guardHighDeputyExecutor":{"name":"Guard High Deputy Executor"},
+		
+		"citizen":{"name":"Гражданин"},
+		"agent":{"name":"Агент"},
+		"specialAgent":{"name":"Специальный агент"},
+		
+		"pilot":{"name":"Пилот"},
+		"unknown":{name:"Неизвестный"},
+		
+		"brother":{name:"Брат"},
+		"sister":{name:"Сестра"},
+		"father":{name:"Отец"},
+		"mother":{name:"Мать"},
+		"elder":{name:"Старейшина"},
+		
+		"terrorist":{name:"Террорист"},
+		"freedomFighter":{name:"Борец за свободу"},
+		"clone":{name:"Клон"},
+		
+	},
+	
+	"posts":{
+		"factionLeader":{"name":"Верховный Главнокомандующий"},
+	
+		"patrolCommander":{"name":"Командир патруля"},
+		"fleetCommander":{"name":"Командующий флотом"},
+		
+		"baseCommander":{"name":"Командир базы"},
+		"stationCommander":{"name":"Командир станции"},
+		"outpostCommander":{"name":"Командир форпоста"},
+		"portmaster":{"name":"Начальник порта"},
+		
+		"intelligenceDirector":{"name":"Director of Intelligence"},
+		"guardLeader":{"name":"Director of Special Forces"},
+		
+		"supplyOfficer":{"name":"Quartermaster"},
+		"supplyManager":{"name":"Supply Manager"},
+		"medicalSupplier":{"name":"Medical Supplier"},
+		
+		"administrator":{"name":"Administrator"},
+		"military_administrator":{"name":"Administrator"},
+		"freeAdmin":{"name":"Freelance Administrator"},
+		
+		"guildMaster":{"name":"Гильдмастер"},
+		"communeLeader":{"name":"Лидер коммуны"},
+		"executive":{"name":"Executive"},
+		"seniorExecutive":{"name":"Senior Executive"},
+		"minorCriminal":{"name":"Мелкий преступник"},
+		"criminal":{"name":"Criminal"},
+		"spacer":{"name":"Spacer"},
+		
+		"genericMilitary":{"name":"Командир"},
+		
+		"trader":{"name":"Trader"},
+		"merchant":{"name":"Merchant"},
+		"investor":{"name":"Инвестор"},
+		"commodities_agent":{"name":"Товарный агент"},
+		"entrepreneur":{"name":"Предприниматель"},
+		
+		"shady":{"name":"Темная личность"},
+		"gangster":{"name":"Гангстер"},
+		"smuggler":{"name":"Контрабандист"},
+		"fence":{"name":"Пограничник"},
+		"armsDealer":{"name":"Торговец оружием"},
+		
+		
+		"citizen":{"name":"Гражданин"},
+		
+		"mercenary":{"name":"Mercenary Officer"},
+		"officer":{"name":"Officer"},
+		"officer_for_hire":{"name":"Officer (available for hire)"}, 
+		
+		"investigator":{"name":"Главный следователь"},
+		"agent":{"name":"Агент"},
+		"specialAgent":{"name":"Special Agent"},
+		
+		"provost":{name:"Provost"},
+		"academician":{name:"Academician"},
+		
+		"doctor":{name:"Доктор"},
+		"hacker":{name:"Hacker"},
+		"hermit":{name:"Hermit"},
+		"pensioner":{name:"Пенсионер"},
+		"activist":{name:"Activist"},
+		"scientist":{name:"Scientist"},
+		"terrorist":{name:"Terrorist"},
+		"warlord":{name:"Warlord"},
+		"unknown":{name:"Unknown"},
+		"aristocrat":{name:"Aristocrat"},
+		
+		"synodSubcurate":{name:"Synod Subcurate"},
+		"archcurate":{name:"Archcurate"},
+		"shrinePriest":{name:"Curate Sacraria"},
+		"excubitorOrbis":{"name":"Excubitor Orbis"},
+		"initiate":{"name":"Initiate"},
+		"novice":{"name":"Novice"},
+		"pilgrim":{"name":"Pilgrim"},
+	},
+}
+
+
+
+
+
+
+
