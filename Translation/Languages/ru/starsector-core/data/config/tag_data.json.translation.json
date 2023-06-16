@@ -1,0 +1,85 @@
+{
+	# only applies to intel tags
+	
+	"New":{
+		"name":"Новые",
+		"color":"buttonShortcut",
+		"width":118,
+		"putFirst":true,
+		"sort":10,
+	},
+	"Important":{
+		"name":"Важные",
+		#"color":"buttonShortcut",
+		"width":118,
+		"putFirst":true,
+		"sort":20,
+	},
+	"Major events":{
+		"name":"Главные события",
+		#"color":"buttonShortcut",
+		"width":119,
+		#"putFirst":true,
+		"sort":30,
+	},
+	"Contacts":{
+		"name":"Контакты",
+		"width":118,
+		"putFirst":true,
+		"sort":32,
+	},
+	"Local":{
+		"name":"Локальные",
+		"width":118,
+		"putFirst":true,
+		"sort":33,
+	},
+	"Colony threats":{
+		"name":"Угрозы колонии",
+		#"color":[200,0,0,255],
+		#"width":119,
+		"putFirst":true,
+		"sort":34,
+	},
+	"Fleet log":{
+		"name":"Журнал флота",
+		"width":119,
+		"putFirst":true,
+		"sort":35,
+	},
+	"Accepted":{
+		"name":"Принято",
+		#"color":"textFriendColor",
+		"width":119,
+		"putFirst":true,
+		"sort":37.5,
+	},
+	"Missions":{
+		"name":"Миссии",
+		#"color":"textFriendColor",
+		"width":119,
+		"putFirst":true,
+		"sort":40,
+	},
+	"Bounties":{
+		"name":"Награды",
+		#"color":[200,0,0,255],
+		"width":119,
+		"putFirst":true,
+		"sort":50,
+	},
+	"Story":{
+		"name":"История",
+		"width":119,
+		"putFirst":true,
+		"sort":31,
+	},
+	"Luddic shrines":{
+		"name":"Святыни Luddic",
+		"color":[75,200,0,255],
+	},
+
+}
+
+
+
