@@ -7,7 +7,7 @@
   "linkerEnabled": true,
   "resources": {
     "assembly": {
-      "Common.dll": "sha256-khrxcer8GtPkG+ph25DBnJmgBQT\/d4F4NLUFjpmQ\/\/U=",
+      "Common.dll": "sha256-1pYga6p0mBRU3LlrmXR\/\/lemb8Kg3GILi6o9kDBoY88=",
       "CsvHelper.dll": "sha256-oh395MqwHOdv87ggl0L2cpWEDZZGFYe3CVUXnzSo8rY=",
       "Microsoft.AspNetCore.Components.dll": "sha256-RbCBVZzw0nhRei6ccnp8QRG8SkByFGtrJ\/0C3A0oW98=",
       "Microsoft.AspNetCore.Components.Web.dll": "sha256-3UiIc2Xw0leV5bCs96PWBN9JYz\/iKJ1VXLkPovopgjs=",
@@ -24,7 +24,7 @@
       "Microsoft.Extensions.Primitives.dll": "sha256-eXvGx2jcjpTPEJoAHBsW\/VuMPbNyyU+AsuhPmkzSSRY=",
       "Microsoft.JSInterop.dll": "sha256-1DMowbEcl7W+S7iIROG4fHaFWKjIMc3y26uOYaWueDc=",
       "Microsoft.JSInterop.WebAssembly.dll": "sha256-Awf7wv9O8IMhKfPgck20vnr8m17qkGi5wsUfHhliPCQ=",
-      "StarSectorWebTools.dll": "sha256-jcBseKmYOsFF3PgSkLXFrdys+5rm2s5u+vusKxwPyJs=",
+      "StarSectorWebTools.dll": "sha256-UE5r\/6IC4DuVazlGs9bs8er3sMoAloHCscmwU7hG\/Bs=",
       "System.Collections.Concurrent.dll": "sha256-IVO2NrxC4mmmm4cMEwsj8rHMH8qGKQYHUxwnXaF4uaY=",
       "System.Collections.dll": "sha256-4RbA8dO1Kdj9VM398YmIPtSYaj2alAC+bTWgAX4zfEs=",
       "System.Collections.NonGeneric.dll": "sha256-1mxz5AtxTSG5UatSKz+EC13KIekFci8vbmi73tLRWOo=",
@@ -33,7 +33,7 @@
       "System.ComponentModel.Primitives.dll": "sha256-VmeUqtz7331XKDJA\/rBIQq0l3wMNBgzza1M7prkHFmo=",
       "System.ComponentModel.TypeConverter.dll": "sha256-+b5zscbiAr2GrpOr\/DDzK0JmqIzSmBu5EQHUwNKtmgQ=",
       "System.Console.dll": "sha256-SnNNEzbe75RH3gsNP1eExJSOQ9PPP6jOzenntRlWmPg=",
-      "System.Data.Common.dll": "sha256-ZiC\/mGz\/KF28FxgnG6UW8s9whxfCBgXAyhkrxkKzkGM=",
+      "System.Data.Common.dll": "sha256-QhCycyA6\/V5f3hrVILubHW\/G6+rQusf1VP50zet8WZc=",
       "System.Diagnostics.TraceSource.dll": "sha256-kKR2euh7YOrAYLuXKQ+GICEDn2kChfofmW6SvzsjAag=",
       "System.dll": "sha256-vjZqvG\/RsRoxqfMsGr8fUYGm1eNLleWvkorGBcJV5k8=",
       "System.Drawing.dll": "sha256-GZKQ\/Gq\/hj9W0xJv\/3vMbSyX80AUy8f+4WynQPDkptk=",
