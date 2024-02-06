@@ -69,7 +69,7 @@ namespace Common.Utils
             return ms;
         }
 
-        public static void Save(DataTable dataTable, string path)
+        public static void Save(DataTable dataTable, string path, bool skipComments)
         {
             using (var textWriter = File.CreateText(path))
             using (var csv = new CsvWriter(textWriter, new CsvConfiguration(CultureInfo.InvariantCulture) { Encoding = Encoding.UTF8 }))
@@ -84,6 +84,12 @@ namespace Common.Utils
                 // Write row values
                 foreach (DataRow row in dataTable.Rows)
                 {
+                    if (row.ItemArray.Length == 0)
+                        continue;
+
+                    if (skipComments && row[0] is string text && text.StartsWith("#"))
+                        continue;
+
                     for (var i = 0; i < dataTable.Columns.Count; i++)
                     {
                         csv.WriteField(row[i]);

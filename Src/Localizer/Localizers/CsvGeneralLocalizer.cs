@@ -53,7 +53,7 @@ namespace Localizer.Localizers
                 }
             }
 
-            CsvUtils.Save(dataTable, csvPath);
+            CsvUtils.Save(dataTable, csvPath, true);
 
             return translationCount;
         }
