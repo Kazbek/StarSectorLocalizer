@@ -164,6 +164,8 @@ namespace Localizer.DataExtractors
 
             ".getAbility(\"{0}\"", //get set
             ".setSkillLevel(\"{0}\"",
+            ".getFaction(\"{0}\")",
+            ".hasTag(\"{0}\")",
 
             //com.fs.starfarer.api.SettingsAPI
             ".getBonusXP(\"{0}\")",

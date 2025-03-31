@@ -36,7 +36,7 @@ namespace Patcher.Patchers
                     if (!processJar)
                         continue;
 
-                    int translated = JarGeneralLocalizer.Localize(targetFilePath, JsonToTranslationDictionary.Parse(translationFilePath), Path.GetFullPath("Decompilers\\CFRZip-0.152.jar"));
+                    int translated = JarGeneralLocalizer.Localize(targetFilePath, JsonToTranslationDictionary.ParseJarDictionary(translationFilePath), Path.GetFullPath("Decompilers\\CFRZip-0.152.jar"));
                     ProgressLogger.Report($"[{translated}] \"{targetFilePath}\"");
                 }
                 else if (convention == TranslationFilesNameConventions.CsvTranslation)
@@ -51,7 +51,7 @@ namespace Patcher.Patchers
                 }
                 else if (convention == TranslationFilesNameConventions.JsonTranslation)
                 {
-                    int translated = JsonGeneralLocalizer.Localize(targetFilePath, JsonToTranslationDictionary.Parse(translationFilePath));
+                    int translated = JsonGeneralLocalizer.Localize(targetFilePath, JsonToTranslationDictionary.ParseGeneralDictionary(translationFilePath));
                     ProgressLogger.Report($"[JSON][{translated}] \"{targetFilePath}\"");
                 }
                 else if (convention == TranslationFilesNameConventions.ReplaceFileConvention)

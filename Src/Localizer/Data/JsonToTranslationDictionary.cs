@@ -5,11 +5,28 @@ namespace Localizer.Data
 {
     public static class JsonToTranslationDictionary
     {
-        public static GeneralDictionary Parse(string path, bool includeNonTranslated = false)
+        public static GeneralDictionary ParseGeneralDictionary(string path, bool includeNonTranslated = false)
         {
             string json = File.ReadAllText(path);
 
             var dict = JsonSerializer.Deserialize<GeneralDictionary>(json);
+            InitializeGeneralDictionary(dict, path, includeNonTranslated);
+
+            return dict;
+        }
+
+        public static JarDictionary ParseJarDictionary(string path, bool includeNonTranslated = false)
+        {
+            string json = File.ReadAllText(path);
+
+            var dict = JsonSerializer.Deserialize<JarDictionary>(json);
+            InitializeGeneralDictionary(dict.Translations, path, includeNonTranslated);
+
+            return dict;
+        }
+
+        private static void InitializeGeneralDictionary(GeneralDictionary dict, string path, bool includeNonTranslated)
+        {
             if (!includeNonTranslated)
                 dict.DeleteNotTranslated();
 
@@ -18,8 +35,6 @@ namespace Localizer.Data
 
             if (!Validate(dict, out string message))
                 throw new Exception($"{path}\nProbably corrupted translation!{message}");
-
-            return dict;
         }
 
         public static bool Validate(Dictionary<string, string> translation, out string message)

@@ -1,5 +1,6 @@
 ﻿using Localizer.DataExtractors;
 using Localizer.Decompilers;
+using Localizer.Dictionaries;
 using System;
 using System.Collections.Generic;
 using System.IO.Compression;
@@ -11,7 +12,7 @@ namespace Localizer.Localizers
 {
     public static class JarGeneralLocalizer
     {
-        public static int Localize(string zipPath, IDictionary<string, string> dictionary, string decompilerPath)
+        public static int Localize(string zipPath, JarDictionary jarDictionary, string decompilerPath)
         {
             int localizedStrings = 0;
             Console.WriteLine($"Process: {zipPath}");
@@ -49,6 +50,9 @@ namespace Localizer.Localizers
 
                 foreach (ZipArchiveEntry entry in archive.Entries.Where(t => t.FullName.EndsWith(".class", StringComparison.OrdinalIgnoreCase)).ToList())
                 {
+                    if (jarDictionary.BlacklistNamespaces.Any(entry.FullName.StartsWith))
+                        continue;
+
                     if (entry.FullName.EndsWith(".class", StringComparison.OrdinalIgnoreCase))
                     {
                         var stream = entry.Open();
@@ -69,7 +73,7 @@ namespace Localizer.Localizers
                         if (stopWords.TryGetValue(GetClassGroupName(entry.Name), out var sws))
                             fileStopWords.AddRange(sws);*/
 
-                        var utf8Strings = javaClassExtractor.GetUtf8Entries().Where(t => dictionary.ContainsKey(t)).ToList();
+                        var utf8Strings = javaClassExtractor.GetUtf8Entries().Where(t => jarDictionary.Translations.ContainsKey(t)).ToList();
 
                         utf8Strings = javaZipSourceCodeExtractor.GetAllowedToReplaceByAdvices(className, utf8Strings);
 
@@ -78,7 +82,7 @@ namespace Localizer.Localizers
 
                         int modified = 0;
                         foreach(var text in utf8Strings)
-                            if (dictionary.TryGetValue(text, out string translate))
+                            if (jarDictionary.Translations.TryGetValue(text, out string translate))
                             {
                                 Console.WriteLine($"[LOCALIZED] \"{text}\" - \"{translate}\"");
                                 var textBytes = Encoding.UTF8.GetBytes(text);

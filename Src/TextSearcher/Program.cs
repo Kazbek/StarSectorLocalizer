@@ -9,8 +9,8 @@ namespace TextSearcher
         {
             List<string> jarFiles = new List<string>
             {
-                @"D:\Games\Starsector\starsector-core\starfarer_obf.jar",
-                @"D:\Games\Starsector\starsector-core\starfarer.api.jar"
+                //@"D:\Games\Starsector\starsector-core\starfarer_obf.jar",
+                @"C:\StarSectorPlayground\StarSector-0.98a-RC5-Work\starsector-core\starfarer.api.jar"
             };
 
             string text = null;
@@ -30,9 +30,9 @@ namespace TextSearcher
                         if (entry.FullName.EndsWith(".class", StringComparison.OrdinalIgnoreCase))
                         {
                             var javaClassExtractor = new JavaClassExtractor(entry.Open());
-                            foreach(var find in javaClassExtractor.GetUtf8Entries().Where(t => t.Contains(text, StringComparison.InvariantCultureIgnoreCase)))
+                            foreach(var find in javaClassExtractor.GetUtf8Entries().Where(t => t.Equals(text, StringComparison.InvariantCultureIgnoreCase)))
                             {
-                                Console.WriteLine(find);
+                                Console.WriteLine(find + ":" + entry.FullName);
                             }
                         }
                     }
