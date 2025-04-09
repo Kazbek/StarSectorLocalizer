@@ -12,7 +12,7 @@ namespace Patcher
         static void Main(string[] args)
         {
             string translationPath = @"Languages\ru\";
-            string targetFolder = @"C:\StarSectorPlayground\StarSector-0.98a-RC5-Work\";
+            string targetFolder = @"C:\StarSectorPlayground\StarSector-0.98a-RC7-Work\";
             string patchFolder = $"C:\\StarSectorPlayground\\Translation Patch\\{DateTime.Now.ToString("d")}\\";
 
             FilesPatcher patcher = new FilesPatcher
